@@ -286,25 +286,6 @@
       object-fit: contain;
     }
     
-    .app-image {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      background: transparent;
-      border: 1px solid #e8eaed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 24px 0;
-      overflow: hidden;
-    }
-    
-    .app-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
     .app-title {
       flex: 1;
     }
@@ -459,31 +440,15 @@
     
     .contact-content {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 80px;
       align-items: center;
+      justify-items: center;
+      text-align: center;
     }
     
     .contact-text {
       padding: 20px 0;
-    }
-    
-    .contact-image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-      background: transparent;
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      overflow: hidden;
-    }
-    
-    .contact-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
     
     .contact-info {
@@ -501,6 +466,7 @@
       transition: all 0.2s ease;
       margin-bottom: 16px;
       padding: 12px 0;
+      justify-content: center;
     }
     
     .contact-item:hover {
@@ -523,6 +489,7 @@
       display: flex;
       gap: 16px;
       margin-top: 32px;
+      justify-content: center;
     }
     
     .social-link {
@@ -709,10 +676,6 @@
         min-height: 250px;
       }
       
-      .contact-image {
-        min-height: 200px;
-      }
-      
       .app {
         padding: 24px;
       }
@@ -783,9 +746,6 @@
             <h3>ZooIt</h3>
           </div>
         </div>
-        <div class="app-image">
-          <img src="images/4.png" alt="ZooIt アプリ画面">
-        </div>
         <p>マッチョな動物と一緒に毎日の筋トレ習慣サポート。楽しいキャラクターたちがあなたのフィットネスジャーニーを応援します。</p>
         <a href="zooit.html" class="app-link">
           詳細を見る
@@ -801,9 +761,6 @@
           <div class="app-title">
             <h3>まめけつ</h3>
           </div>
-        </div>
-        <div class="app-image">
-          <img src="images/6.png" alt="まめけつ アプリ画面">
         </div>
         <p>日々の血圧管理をおもしろ語学学習で楽しくまめに。健康管理と学習を同時にサポートする革新的なアプリです。</p>
         <a href="mameketsu.html" class="app-link">
@@ -821,9 +778,6 @@
             <h3>XRWatch</h3>
           </div>
         </div>
-        <div class="app-image">
-          <img src="images/8.png" alt="XRWatch アプリ画面">
-        </div>
         <p>バーチャルタイムの記録とシェア。やり込んだ時間をシェアして競おう。VR・XR体験を可視化して達成感を実感。</p>
         <a href="xrwatch.html" class="app-link">
           詳細を見る
@@ -840,24 +794,24 @@
     <div class="features-grid">
       <div class="feature">
         <div class="feature-image">
-          <img src="images/9.png" alt="楽しく継続のイメージ">
+          <img src="images/9.png" alt="気軽に始めるのイメージ">
         </div>
-        <h3>楽しく継続</h3>
-        <p>キャラクターとゲーミフィケーションで、健康管理が楽しい習慣に変わります</p>
+        <h3>気軽に始める</h3>
+        <p>面倒な設定や複雑な操作は一切なし。今すぐダウンロードして始められます</p>
       </div>
       <div class="feature">
         <div class="feature-image">
-          <img src="images/10.png" alt="使いやすさのイメージ">
+          <img src="images/10.png" alt="使いやすいUIのイメージ">
         </div>
-        <h3>使いやすさ</h3>
+        <h3>使いやすいUI</h3>
         <p>直感的なインターフェースで、誰でも簡単に使い始められます</p>
       </div>
       <div class="feature">
         <div class="feature-image">
-          <img src="images/11.png" alt="プライバシー重視のイメージ">
+          <img src="images/11.png" alt="楽しく継続のイメージ">
         </div>
-        <h3>プライバシー重視</h3>
-        <p>データはローカル保存で、あなたのプライバシーをしっかり保護します</p>
+        <h3>楽しく継続</h3>
+        <p>キャラクターとゲーミフィケーションで、健康管理が楽しい習慣に変わります</p>
       </div>
     </div>
   </div>
@@ -893,13 +847,13 @@
  <div class="container">
    <div class="contact-content">
      <div class="contact-text">
-       <h2 class="section-title" style="text-align: left;">お問い合わせ</h2>
+       <h2 class="section-title">お問い合わせ</h2>
        <div class="contact-info">
-         <a href="mailto:aaa@gmail.com" class="contact-item">
+         <a href="mailto:contact@emotekit.com" class="contact-item">
            <div class="contact-icon">
              <i class="fas fa-envelope"></i>
            </div>
-           <span>aaa@gmail.com</span>
+           <span>contact@emotekit.com</span>
          </a>
        </div>
        <div class="social-links">
@@ -907,9 +861,6 @@
          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
        </div>
-     </div>
-     <div class="contact-image">
-       <img src="images/12.png" alt="お問い合わせイメージ">
      </div>
    </div>
  </div>
