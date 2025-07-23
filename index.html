@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EmoteKit | Emote,Than Remote.</title>
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff220a'/><text y='70' font-size='60' text-anchor='middle' x='50' fill='white'>E</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff220a'/><text y='70' font-size='60' text-anchor='middle' x='50' fill='white'>E</text></svg>">
+  <link rel="icon" type="image/png" href="images/1.png">
+  <link rel="apple-touch-icon" href="images/1.png">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
@@ -57,15 +57,18 @@
     .logo {
       width: 32px;
       height: 32px;
-      background: #ff220a;
+      background: transparent;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      color: white;
-      font-weight: 800;
-      font-size: 18px;
+    }
+    
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     
     .brand-name {
@@ -88,6 +91,7 @@
       font-weight: 500;
       font-size: 16px;
       transition: color 0.2s ease;
+      cursor: pointer;
     }
     
     .nav-link:hover {
@@ -106,6 +110,7 @@
       color: #3c4043;
       text-decoration: none;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
     
     .language-selector:hover {
@@ -136,14 +141,17 @@
       align-items: center;
       justify-content: center;
       min-height: 400px;
-      background: linear-gradient(135deg, #ff220a, #e01e08);
+      background: transparent;
       border-radius: 20px;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       overflow: hidden;
-      color: white;
-      font-size: 72px;
-      font-weight: 900;
+    }
+    
+    .header-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     
     h1 {
@@ -232,18 +240,6 @@
       line-height: 1.6;
     }
     
-    /* 審査用通知 */
-    .review-notice {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 32px;
-      color: #856404;
-      text-align: center;
-      font-weight: 500;
-    }
-    
     /* アプリ一覧 */
     .apps-grid {
       display: grid;
@@ -278,15 +274,27 @@
       width: 56px;
       height: 56px;
       border-radius: 12px;
-      background: #ff220a;
+      background: #f8f9fa;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       overflow: hidden;
+      border: 1px solid #e8eaed;
+    }
+    
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    /* プレースホルダーアイコン用のスタイル */
+    .app-icon.placeholder {
+      background: linear-gradient(135deg, #ff220a, #e01e08);
       color: white;
-      font-weight: 800;
       font-size: 24px;
+      font-weight: bold;
     }
     
     .app-title {
@@ -319,6 +327,12 @@
       font-size: 16px;
       cursor: not-allowed;
       opacity: 0.6;
+    }
+    
+    .app-link.coming-soon::after {
+      content: " (準備中)";
+      font-size: 14px;
+      color: #999;
     }
     
     .app-link i {
@@ -356,15 +370,18 @@
       width: 120px;
       height: 120px;
       border-radius: 16px;
-      background: linear-gradient(135deg, #ff220a, #e01e08);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px;
       overflow: hidden;
-      color: white;
-      font-size: 48px;
-      font-weight: 800;
+    }
+    
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     
     .feature h3 {
@@ -491,9 +508,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #999;
+      color: #5f6368;
       text-decoration: none;
       font-size: 20px;
+      transition: all 0.2s ease;
       cursor: not-allowed;
       opacity: 0.6;
     }
@@ -534,6 +552,16 @@
       cursor: not-allowed;
     }
     
+    .footer-section a.active {
+      color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-section a.active:hover {
+      color: white;
+    }
+    
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: 24px;
@@ -563,7 +591,6 @@
       .logo {
         width: 28px;
         height: 28px;
-        font-size: 16px;
       }
       
       .logo-section {
@@ -644,15 +671,6 @@
       .language-selector {
         display: none;
       }
-      
-      .header-image {
-        font-size: 48px;
-        min-height: 300px;
-      }
-      
-      .feature-image {
-        font-size: 36px;
-      }
     }
     
     @media (max-width: 480px) {
@@ -666,7 +684,6 @@
       
       .header-image {
         min-height: 250px;
-        font-size: 36px;
       }
       
       .app {
@@ -675,10 +692,6 @@
       
       .feature {
         padding: 32px 24px;
-      }
-      
-      .feature-image {
-        font-size: 32px;
       }
     }
   </style>
@@ -689,7 +702,9 @@
   <div class="container">
     <div class="nav-content">
       <div class="logo-section">
-        <div class="logo">E</div>
+        <div class="logo">
+          <img src="images/1.png" alt="EmoteKit Logo">
+        </div>
         <a href="#" class="brand-name">EmoteKit</a>
       </div>
       <div class="nav-links">
@@ -697,10 +712,10 @@
         <a href="#features" class="nav-link">特徴</a>
         <a href="#company" class="nav-link">会社情報</a>
         <a href="#contact" class="nav-link">お問い合わせ</a>
-        <a href="#" class="language-selector">
+        <span class="language-selector">
           <i class="fas fa-globe"></i>
           日本語
-        </a>
+        </span>
       </div>
     </div>
   </div>
@@ -720,7 +735,7 @@
         </a>
       </div>
       <div class="header-image">
-        EK
+        <img src="images/2.png" alt="EmoteKit メインビジュアル">
       </div>
     </div>
   </div>
@@ -730,53 +745,54 @@
   <section id="apps">
     <h2 class="section-title">アプリ一覧</h2>
     <p class="section-subtitle">健康管理を楽しく継続できる、3つのユニークなアプリをご紹介します</p>
-    
-    <div class="review-notice">
-      <i class="fas fa-info-circle"></i>
-      現在Apple審査中のため、詳細ページは準備中です。リリース後に詳細をご覧いただけます。
-    </div>
 
     <div class="apps-grid">
       <div class="app">
         <div class="app-header">
-          <div class="app-icon">Z</div>
+          <div class="app-icon placeholder">
+            Z
+          </div>
           <div class="app-title">
             <h3>ZooIt</h3>
           </div>
         </div>
         <p>マッチョな動物と一緒に毎日の筋トレ習慣サポート。楽しいキャラクターたちがあなたのフィットネスジャーニーを応援します。</p>
-        <div class="app-link">
-          詳細を見る（準備中）
+        <span class="app-link coming-soon">
+          詳細を見る
           <i class="fas fa-arrow-right"></i>
-        </div>
+        </span>
       </div>
 
       <div class="app">
         <div class="app-header">
-          <div class="app-icon">ま</div>
+          <div class="app-icon placeholder">
+            ま
+          </div>
           <div class="app-title">
             <h3>まめけつ</h3>
           </div>
         </div>
         <p>日々の血圧管理をおもしろ語学学習で楽しくまめに。健康管理と学習を同時にサポートする革新的なアプリです。</p>
-        <div class="app-link">
-          詳細を見る（準備中）
+        <span class="app-link coming-soon">
+          詳細を見る
           <i class="fas fa-arrow-right"></i>
-        </div>
+        </span>
       </div>
 
       <div class="app">
         <div class="app-header">
-          <div class="app-icon">X</div>
+          <div class="app-icon placeholder">
+            XR
+          </div>
           <div class="app-title">
             <h3>XRWatch</h3>
           </div>
         </div>
         <p>バーチャルタイムの記録とシェア。やり込んだ時間をシェアして競おう。VR・XR体験を可視化して達成感を実感。</p>
-        <div class="app-link">
-          詳細を見る（準備中）
+        <span class="app-link coming-soon">
+          詳細を見る
           <i class="fas fa-arrow-right"></i>
-        </div>
+        </span>
       </div>
     </div>
   </section>
@@ -788,21 +804,21 @@
     <div class="features-grid">
       <div class="feature">
         <div class="feature-image">
-          🚀
+          <img src="images/9.png" alt="気軽に始めるのイメージ">
         </div>
         <h3>気軽に始める</h3>
         <p>面倒な設定や複雑な操作は一切なし。今すぐダウンロードして始められます</p>
       </div>
       <div class="feature">
         <div class="feature-image">
-          💡
+          <img src="images/10.png" alt="使いやすいUIのイメージ">
         </div>
         <h3>使いやすいUI</h3>
         <p>直感的なインターフェースで、誰でも簡単に使い始められます</p>
       </div>
       <div class="feature">
         <div class="feature-image">
-          🎮
+          <img src="images/11.png" alt="楽しく継続のイメージ">
         </div>
         <h3>楽しく継続</h3>
         <p>キャラクターとゲーミフィケーションで、健康管理が楽しい習慣に変わります</p>
@@ -851,9 +867,9 @@
          </a>
        </div>
        <div class="social-links">
-         <div class="social-link"><i class="fab fa-tiktok"></i></div>
-         <div class="social-link"><i class="fab fa-instagram"></i></div>
-         <div class="social-link"><i class="fab fa-twitter"></i></div>
+         <span class="social-link"><i class="fab fa-tiktok"></i></span>
+         <span class="social-link"><i class="fab fa-instagram"></i></span>
+         <span class="social-link"><i class="fab fa-twitter"></i></span>
        </div>
      </div>
    </div>
@@ -866,36 +882,36 @@
      <div class="footer-section">
        <h4>アプリ</h4>
        <ul>
-         <li><a>ZooIt（準備中）</a></li>
-         <li><a>まめけつ（準備中）</a></li>
-         <li><a>XRWatch（準備中）</a></li>
+         <li><span>ZooIt (準備中)</span></li>
+         <li><span>まめけつ (準備中)</span></li>
+         <li><span>XRWatch (準備中)</span></li>
        </ul>
      </div>
      <div class="footer-section">
        <h4>サポート</h4>
        <ul>
-         <li><a>ヘルプセンター（準備中）</a></li>
-         <li><a>よくある質問（準備中）</a></li>
-         <li><a>お問い合わせ</a></li>
-         <li><a>利用規約（準備中）</a></li>
+         <li><span>ヘルプセンター (準備中)</span></li>
+         <li><span>よくある質問 (準備中)</span></li>
+         <li><a href="mailto:contact@emotekit.com" class="active">お問い合わせ</a></li>
+         <li><span>利用規約 (準備中)</span></li>
        </ul>
      </div>
      <div class="footer-section">
        <h4>会社</h4>
        <ul>
-         <li><a>会社概要</a></li>
-         <li><a>採用情報（準備中）</a></li>
-         <li><a>プレスリリース（準備中）</a></li>
-         <li><a>プライバシーポリシー（準備中）</a></li>
+         <li><span>会社概要 (準備中)</span></li>
+         <li><span>採用情報 (準備中)</span></li>
+         <li><span>プレスリリース (準備中)</span></li>
+         <li><span>プライバシーポリシー (準備中)</span></li>
        </ul>
      </div>
      <div class="footer-section">
     <h4>フォロー</h4>
       <ul>
-        <li><a>TikTok（準備中）</a></li>
-        <li><a>Instagram（準備中）</a></li>
-        <li><a>Twitter（準備中）</a></li>
-        <li><a>Blog（準備中）</a></li>
+        <li><span>TikTok (準備中)</span></li>
+        <li><span>Instagram (準備中)</span></li>
+        <li><span>Twitter (準備中)</span></li>
+        <li><span>Blog (準備中)</span></li>
       </ul>
     </div>
   </div>
@@ -904,5 +920,25 @@
   </div>
 </div>
 </footer>
+
+<script>
+// スムーススクロール
+document.querySelectorAll('.nav-link, .cta-button').forEach(link => {
+  link.addEventListener('click', function(e) {
+    if (this.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});
+</script>
+
 </body>
 </html>
