@@ -328,7 +328,20 @@
       cursor: not-allowed;
       opacity: 0.6;
     }
-    
+    .app-link.active {
+  color: #ff220a;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.app-link.active:hover {
+  color: #e01e08;
+}
+
+.app-link.active::after {
+  content: "";
+}
     .app-link.coming-soon::after {
       content: " (準備中)";
       font-size: 14px;
@@ -747,21 +760,22 @@
     <p class="section-subtitle">健康管理を楽しく継続できる、3つのユニークなアプリをご紹介します</p>
 
     <div class="apps-grid">
-      <div class="app">
-        <div class="app-header">
-          <div class="app-icon placeholder">
-            Z
-          </div>
-          <div class="app-title">
-            <h3>ZooIt</h3>
-          </div>
-        </div>
-        <p>マッチョな動物と一緒に毎日の筋トレ習慣サポート。楽しいキャラクターたちがあなたのフィットネスジャーニーを応援します。</p>
-        <span class="app-link coming-soon">
-          詳細を見る
-          <i class="fas fa-arrow-right"></i>
-        </span>
-      </div>
+
+<div class="app">
+  <div class="app-header">
+    <div class="app-icon placeholder">
+      Z
+    </div>
+    <div class="app-title">
+      <h3>ZooIt</h3>
+    </div>
+  </div>
+  <p>マッチョな動物と一緒に毎日の筋トレ習慣サポート。楽しいキャラクターたちがあなたのフィットネスジャーニーを応援します。</p>
+  <a href="zooit.html" class="app-link active">
+    詳細を見る
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
 
       <div class="app">
         <div class="app-header">
