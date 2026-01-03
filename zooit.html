@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZooIt!! | EmoteKit</title>
+  <title>Zoo it!! | マッチョどうぶつときんとれ | EmoteKit</title>
   <link rel="icon" type="image/png" href="images/1.png">
   <link rel="apple-touch-icon" href="images/1.png">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #ffffff;
       color: #3c4043;
-      line-height: 1.6;
+      line-height: 1.8;
       font-size: 16px;
       overflow-x: hidden;
     }
@@ -51,12 +51,12 @@
     .logo-section {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 8px;
     }
     
     .logo {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       background: transparent;
       border-radius: 8px;
       display: flex;
@@ -72,8 +72,8 @@
     }
     
     .brand-name {
-      font-size: 24px;
-      font-weight: 800;
+      font-size: 28px;
+      font-weight: 900;
       color: #ff6b35;
       text-decoration: none;
       letter-spacing: -0.5px;
@@ -82,13 +82,13 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
     }
     
     .nav-link {
       color: #3c4043;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 16px;
       transition: color 0.2s ease;
     }
@@ -97,72 +97,74 @@
       color: #ff6b35;
     }
     
-    /* ヒーローセクション */
+    /* ヒーロー */
     .hero {
       background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
       padding: 140px 0 80px;
       margin-top: 72px;
-    }
-    
-    .hero-content {
       text-align: center;
     }
     
-    .hero-text h1 {
+    .hero h1 {
       font-size: 72px;
       font-weight: 900;
       color: #ff6b35;
       margin-bottom: 24px;
-      letter-spacing: -1px;
-      line-height: 1.1;
+      letter-spacing: -2px;
     }
     
     .hero-tagline {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
       color: #202124;
-      margin-bottom: 60px;
+      margin-bottom: 32px;
+      line-height: 1.5;
     }
     
     .hero-images {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
-      margin-bottom: 60px;
+      margin-top: 60px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .hero-image-box {
-      background: white;
+    .hero-image-item {
       border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+      transition: transform 0.3s ease;
     }
     
-    .hero-image-box img {
+    .hero-image-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .hero-image-item img {
       width: 100%;
       height: auto;
-      border-radius: 12px;
+      display: block;
     }
     
     .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+      display: inline-block;
       background: #ff6b35;
       color: white;
-      padding: 20px 48px;
+      padding: 20px 50px;
       text-decoration: none;
       border-radius: 30px;
       font-weight: 700;
       font-size: 20px;
       transition: all 0.2s ease;
       box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+      margin-top: 40px;
     }
     
     .cta-button:hover {
       background: #ff5722;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
     }
     
@@ -172,12 +174,12 @@
       color: #ff6b35;
       padding: 8px 20px;
       border-radius: 20px;
+      font-size: 14px;
       font-weight: 700;
       margin-left: 12px;
-      font-size: 16px;
     }
     
-    /* セクション共通 */
+    /* セクション */
     section {
       padding: 100px 0;
     }
@@ -186,235 +188,302 @@
       font-size: 48px;
       font-weight: 800;
       color: #202124;
-      margin-bottom: 24px;
-      text-align: center;
-      letter-spacing: -0.5px;
-    }
-    
-    .section-subtitle {
-      font-size: 20px;
-      color: #5f6368;
       margin-bottom: 60px;
       text-align: center;
-      font-weight: 500;
+      letter-spacing: -1px;
     }
     
-    /* 特徴セクション */
+    /* とくちょう */
     .features {
       background: #ffffff;
     }
     
-    .features-showcase {
+    .features-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-bottom: 80px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
     }
     
-    .features-showcase:nth-child(even) {
-      direction: rtl;
-    }
-    
-    .features-showcase:nth-child(even) > * {
-      direction: ltr;
+    .feature-card {
+      text-align: center;
+      padding: 40px 24px;
     }
     
     .feature-image {
-      width: 100%;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 24px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
     
     .feature-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    .feature-text h3 {
-      font-size: 36px;
-      font-weight: 800;
-      color: #ff6b35;
-      margin-bottom: 20px;
-    }
-    
-    .feature-text p {
-      font-size: 20px;
-      color: #5f6368;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    
-    /* LINEスタンプセクション */
-    .line-stamp {
-      background: linear-gradient(135deg, #06C755 0%, #00B900 100%);
-      color: white;
-      text-align: center;
-      padding: 80px 0;
-    }
-    
-    .line-stamp h2 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: white;
-    }
-    
-    .line-stamp p {
-      font-size: 24px;
-      margin-bottom: 40px;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 600;
-    }
-    
-    .stamp-preview {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto 40px;
-    }
-    
-    .stamp-item {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .stamp-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    
-    .line-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: white;
-      color: #06C755;
-      padding: 20px 48px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 20px;
-      transition: all 0.2s ease;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .line-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* キャラクターセクション */
-    .characters {
-      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
-    }
-    
-    .characters-scroll {
-      position: relative;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-    
-    .characters-track {
-      display: flex;
-      gap: 32px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding: 20px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    
-    .characters-track::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .character-card {
-      flex: 0 0 320px;
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-      scroll-snap-align: center;
-      transition: transform 0.3s ease;
-    }
-    
-    .character-card:hover {
-      transform: translateY(-8px);
-    }
-    
-    .character-image {
-      width: 100%;
-      height: 320px;
-      background: linear-gradient(135deg, #ff6b35, #ff8c5a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .character-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
     
-    .character-info {
-      padding: 28px;
+    .feature-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ff6b35;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card p {
+      font-size: 18px;
+      color: #5f6368;
+      line-height: 1.8;
+    }
+    
+    /* あそびかた */
+    .howto {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+    }
+    
+    .howto-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      margin-top: 60px;
+    }
+    
+    .step {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
     
-    .character-info h3 {
-      font-size: 28px;
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: #ff6b35;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0 auto 24px;
+    }
+    
+    .step h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #202124;
+      margin-bottom: 16px;
+    }
+    
+    .step p {
+      font-size: 18px;
+      color: #5f6368;
+      line-height: 1.8;
+    }
+    
+    /* スタンプ */
+    .stamp-section {
+      background: #ffffff;
+      text-align: center;
+    }
+    
+    .stamp-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .stamp-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(255, 107, 53, 0.2);
+    }
+    
+    .stamp-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .stamp-text {
+      font-size: 22px;
+      color: #5f6368;
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+    
+    /* LINE スタンプ */
+    .line-stamps {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+      text-align: center;
+    }
+    
+    .line-title {
+      font-size: 48px;
       font-weight: 800;
+      color: #ff6b35;
+      margin-bottom: 32px;
+    }
+    
+    .line-subtitle {
+      font-size: 24px;
+      color: #202124;
+      margin-bottom: 48px;
+      font-weight: 600;
+    }
+    
+    .line-stamps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+    
+    .line-stamp-item {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+    
+    .line-stamp-item:hover {
+      transform: scale(1.05);
+    }
+    
+    .line-stamp-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    
+    .line-button {
+      display: inline-block;
+      background: #06C755;
+      color: white;
+      padding: 20px 50px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 22px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+    }
+    
+    .line-button:hover {
+      background: #05b44c;
+      transform: translateY(-3px);
+    }
+    
+    .line-button i {
+      margin-right: 8px;
+    }
+    
+    /* どうぶつたち */
+    .animals {
+      background: #ffffff;
+    }
+    
+    .animals-scroll-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-top: 60px;
+      padding-bottom: 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #ff6b35 #f8f9fa;
+    }
+    
+    .animals-scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .animals-scroll-container::-webkit-scrollbar-track {
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+    
+    .animals-scroll-container::-webkit-scrollbar-thumb {
+      background: #ff6b35;
+      border-radius: 4px;
+    }
+    
+    .animals-row {
+      display: flex;
+      gap: 32px;
+      padding: 0 24px;
+      min-width: min-content;
+    }
+    
+    .animal-card {
+      flex: 0 0 280px;
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .animal-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .animal-card-image {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: white;
+    }
+    
+    .animal-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .animal-card-content {
+      padding: 24px;
+      text-align: center;
+    }
+    
+    .animal-card-content h3 {
+      font-size: 24px;
+      font-weight: 700;
       color: #ff6b35;
       margin-bottom: 12px;
     }
     
-    .character-info p {
-      color: #5f6368;
+    .animal-card-content p {
       font-size: 16px;
+      color: #5f6368;
       line-height: 1.7;
     }
     
-    .scroll-hint {
-      text-align: center;
-      margin-top: 24px;
-      color: #5f6368;
-      font-size: 16px;
-      font-weight: 600;
-    }
-    
-    /* ダウンロードCTA */
-    .download-cta {
-      background: #ffffff;
+    /* ダウンロード */
+    .download {
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+      color: white;
       text-align: center;
       padding: 100px 0;
     }
     
-    .download-cta h2 {
+    .download h2 {
       font-size: 48px;
       font-weight: 800;
-      margin-bottom: 24px;
-      color: #202124;
+      margin-bottom: 32px;
+      color: white;
     }
     
-    .download-cta p {
-      font-size: 22px;
-      margin-bottom: 40px;
-      color: #5f6368;
-      font-weight: 500;
+    .download p {
+      font-size: 24px;
+      margin-bottom: 48px;
+      color: rgba(255, 255, 255, 0.95);
     }
     
     /* フッター */
@@ -436,17 +505,12 @@
     .footer-link {
       color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       transition: color 0.2s ease;
     }
     
     .footer-link:hover {
       color: white;
-    }
-    
-    .footer-bottom {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
     }
     
     /* モバイル対応 */
@@ -459,45 +523,37 @@
         padding: 100px 0 60px;
       }
       
-      .hero-text h1 {
+      .hero h1 {
         font-size: 48px;
       }
       
       .hero-tagline {
-        font-size: 20px;
+        font-size: 22px;
       }
       
       .hero-images {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
       }
       
       .section-title {
         font-size: 36px;
       }
       
-      .features-showcase {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .feature-text h3 {
-        font-size: 28px;
-      }
-      
-      .feature-text p {
-        font-size: 18px;
-      }
-      
-      .stamp-preview {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .character-card {
-        flex: 0 0 280px;
+      .line-title {
+        font-size: 36px;
       }
       
       section {
         padding: 60px 0;
+      }
+      
+      .animals-row {
+        padding: 0 16px;
+      }
+      
+      .animal-card {
+        flex: 0 0 240px;
       }
     }
   </style>
@@ -511,12 +567,11 @@
         <div class="logo">
           <img src="images/1.png" alt="EmoteKit Logo">
         </div>
-        <a href="index.html" class="brand-name">EmoteKit</a>
+        <a href="index.html" class="brand-name">Zoo it!!</a>
       </div>
       <div class="nav-links">
         <a href="index.html" class="nav-link">ホーム</a>
         <a href="#download" class="nav-link">ダウンロード</a>
-        <a href="zooit-terms.html" class="nav-link">利用規約</a>
       </div>
     </div>
   </div>
@@ -524,209 +579,236 @@
 
 <section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>ZooIt!!</h1>
-        <p class="hero-tagline">マッチョな動物と筋トレ習慣</p>
+    <h1>Zoo it!!</h1>
+    <p class="hero-tagline">
+      マッチョどうぶつと<br>
+      たのしくきんとれ
+    </p>
+    
+    <div class="hero-images">
+      <div class="hero-image-item">
+        <img src="images/2.png" alt="Zoo it!! 画面">
       </div>
-      
-      <div class="hero-images">
-        <div class="hero-image-box">
-          <img src="images/2.png" alt="ZooIt!! スクリーンショット1">
-        </div>
-        <div class="hero-image-box">
-          <img src="images/9.png" alt="ZooIt!! スクリーンショット2">
-        </div>
-        <div class="hero-image-box">
-          <img src="images/10.png" alt="ZooIt!! スクリーンショット3">
-        </div>
+      <div class="hero-image-item">
+        <img src="images/9.png" alt="Zoo it!! 画面">
       </div>
-      
-      <a href="#download" class="cta-button">
-        <i class="fab fa-apple"></i>
-        いますぐダウンロード
-      </a>
-      <span class="coming-soon">準備中</span>
+      <div class="hero-image-item">
+        <img src="images/10.png" alt="Zoo it!! 画面">
+      </div>
+      <div class="hero-image-item">
+        <img src="images/11.png" alt="Zoo it!! 画面">
+      </div>
     </div>
+    
+    <a href="#download" class="cta-button">
+      いますぐダウンロード
+      <span class="coming-soon">じゅんびちゅう</span>
+    </a>
   </div>
 </section>
 
 <section class="features">
   <div class="container">
-    <div class="features-showcase">
-      <div class="feature-image">
-        <img src="images/2.png" alt="かわいいマッチョ動物">
-      </div>
-      <div class="feature-text">
-        <h3>かわいいマッチョ動物</h3>
-        <p>ライオン、ゴリラ、カンガルー...個性豊かな仲間たちがあなたを応援</p>
-      </div>
-    </div>
+    <h2 class="section-title">Zoo it!! って？</h2>
     
-    <div class="features-showcase">
-      <div class="feature-image">
-        <img src="images/9.png" alt="レベルアップで成長">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-image">
+          <img src="images/9.png" alt="きんとれ">
+        </div>
+        <h3>おうちできんとれ</h3>
+        <p>うでたて、スクワット。じぶんのペースでたのしくうごこう</p>
       </div>
-      <div class="feature-text">
-        <h3>レベルアップで成長</h3>
-        <p>トレーニングするたび、あなたも動物も強くなる</p>
+      
+      <div class="feature-card">
+        <div class="feature-image">
+          <img src="images/10.png" alt="どうぶつ">
+        </div>
+        <h3>どうぶつをそだてる</h3>
+        <p>マッチョでかわいいどうぶつたちがいっしょにがんばるよ</p>
       </div>
-    </div>
-    
-    <div class="features-showcase">
-      <div class="feature-image">
-        <img src="images/10.png" alt="楽しく続ける">
-      </div>
-      <div class="feature-text">
-        <h3>楽しく続ける</h3>
-        <p>ゲーム感覚で、筋トレが毎日の習慣に</p>
-      </div>
-    </div>
-    
-    <div class="features-showcase">
-      <div class="feature-image">
-        <img src="images/11.png" alt="スカウトで仲間集め">
-      </div>
-      <div class="feature-text">
-        <h3>スカウトで仲間集め</h3>
-        <p>新しい動物をどんどん集めて、あなただけの動物園を作ろう</p>
+      
+      <div class="feature-card">
+        <div class="feature-image">
+          <img src="images/11.png" alt="つづける">
+        </div>
+        <h3>まいにちつづく</h3>
+        <p>ゲームみたいにたのしいから、むりなくつづけられる</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="line-stamp">
+<section class="howto">
   <div class="container">
-    <h2>LINEスタンプ発売中！</h2>
-    <p>ZooIt!!の仲間たちを日常で使える</p>
+    <h2 class="section-title">あそびかた</h2>
     
-    <div class="stamp-preview">
-      <div class="stamp-item">
-        <img src="images/2.png" alt="スタンプ1">
+    <div class="howto-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>きんとれする</h3>
+        <p>どうぶつ2ひきといっしょにトレーニング。まいにちがんばろう</p>
       </div>
-      <div class="stamp-item">
-        <img src="images/9.png" alt="スタンプ2">
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>どうぶつそだてる</h3>
+        <p>けいけんちでレベルアップ。マッスルポイントでげんきをたもとう</p>
       </div>
-      <div class="stamp-item">
-        <img src="images/10.png" alt="スタンプ3">
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>なかまをふやす</h3>
+        <p>チャレンジャーをスカウト。ささみチケットでガチャもできるよ</p>
       </div>
-      <div class="stamp-item">
-        <img src="images/11.png" alt="スタンプ4">
+    </div>
+  </div>
+</section>
+
+<section class="stamp-section">
+  <div class="container">
+    <h2 class="section-title">スタンプカードでたのしく</h2>
+    
+    <div class="stamp-content">
+      <div class="stamp-image">
+        <img src="images/2.png" alt="スタンプカード">
+      </div>
+      
+      <p class="stamp-text">
+        トレーニング3かいでチャレンジャーとうじょう<br>
+        しゅうかんスタンプでとくべつなどうぶつも<br>
+        まいにちたのしくつづけよう
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="line-stamps">
+  <div class="container">
+    <h2 class="line-title">LINEスタンプはっばいちゅう！</h2>
+    <p class="line-subtitle">マッチョどうぶつたちをトークでつかおう</p>
+    
+    <div class="line-stamps-grid">
+      <div class="line-stamp-item">
+        <img src="images/9.png" alt="LINEスタンプ">
+      </div>
+      <div class="line-stamp-item">
+        <img src="images/10.png" alt="LINEスタンプ">
+      </div>
+      <div class="line-stamp-item">
+        <img src="images/11.png" alt="LINEスタンプ">
+      </div>
+      <div class="line-stamp-item">
+        <img src="images/2.png" alt="LINEスタンプ">
       </div>
     </div>
     
-    <a href="https://store.line.me/" target="_blank" class="line-button">
+    <a href="https://line.me/S/sticker/" class="line-button" target="_blank">
       <i class="fab fa-line"></i>
-      LINEストアで見る
+      LINEストアでみる
     </a>
   </div>
 </section>
 
-<section class="characters">
+<section class="animals">
   <div class="container">
     <h2 class="section-title">なかまたち</h2>
-    <p class="section-subtitle">あなたを応援するマッチョな動物たち</p>
     
-    <div class="characters-scroll">
-      <div class="characters-track">
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/2.png" alt="ライオン" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🦁</div>'">
+    <div class="animals-scroll-container">
+      <div class="animals-row">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/9.png" alt="ライオン">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>ライオン</h3>
-            <p>百獣の王として力強くサポート</p>
+            <p>ひゃくじゅうのおう。ちからづよくてかっこいい</p>
           </div>
         </div>
         
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/9.png" alt="ゴリラ" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🦍</div>'">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/10.png" alt="ゴリラ">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>ゴリラ</h3>
-            <p>パワフルで真面目な頼れる存在</p>
+            <p>パワフルでやさしい。きんにくがすごい</p>
           </div>
         </div>
         
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/10.png" alt="カンガルー" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🦘</div>'">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/11.png" alt="カンガルー">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>カンガルー</h3>
-            <p>強靭な脚力でジャンプの達人</p>
+            <p>ジャンプがとくい。あしのきんにくがすてき</p>
           </div>
         </div>
         
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/11.png" alt="クマ" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🐻</div>'">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/2.png" alt="クマ">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>クマ</h3>
-            <p>優しさと強さを兼ね備えた大物</p>
+            <p>おおきくてつよい。たよりになるよ</p>
           </div>
         </div>
         
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/1.png" alt="トラ" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🐯</div>'">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/9.png" alt="トラ">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>トラ</h3>
-            <p>俊敏で美しいフォームが自慢</p>
+            <p>しゅんびんでうつくしい。バランスばつぐん</p>
           </div>
         </div>
         
-        <div class="character-card">
-          <div class="character-image">
-            <img src="images/2.png" alt="サイ" onerror="this.parentElement.innerHTML='<div style=\'font-size:120px;\'>🦏</div>'">
+        <div class="animal-card">
+          <div class="animal-card-image">
+            <img src="images/10.png" alt="サイ">
           </div>
-          <div class="character-info">
+          <div class="animal-card-content">
             <h3>サイ</h3>
-            <p>重量級のパワーファイター</p>
+            <p>じゅうりょうきゅう。パワーがすごいんだ</p>
           </div>
         </div>
       </div>
     </div>
     
-    <p class="scroll-hint">← スクロールして他の仲間も見てみよう →</p>
+    <p style="text-align: center; margin-top: 32px; font-size: 18px; color: #5f6368;">
+      ← → にスクロールしてみてね
+    </p>
   </div>
 </section>
 
-<section id="download" class="download-cta">
+<section id="download" class="download">
   <div class="container">
-    <h2>今すぐ始めよう</h2>
-    <p>マッチョな動物たちがあなたを待ってます</p>
+    <h2>いますぐはじめよう</h2>
+    <p>マッチョどうぶつたちがまってるよ</p>
     
-    <a href="#" class="cta-button" style="cursor: not-allowed; opacity: 0.7;">
+    <a href="#" class="cta-button" style="background: white; color: #ff6b35;">
       <i class="fab fa-apple"></i>
-      App Storeで入手
+      App Storeでダウンロード
+      <span class="coming-soon" style="background: #ff6b35; color: white;">じゅんびちゅう</span>
     </a>
-    <span class="coming-soon">準備中</span>
-    
-    <p style="margin-top: 32px; font-size: 16px; color: #5f6368;">
-      ※現在、App Store申請準備中です
-    </p>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <div class="footer-links">
-      <a href="index.html" class="footer-link">ホーム</a>
-      <a href="zooit-terms.html" class="footer-link">利用規約</a>
-      <a href="index.html#contact" class="footer-link">お問い合わせ</a>
+      <a href="index.html" class="footer-link">EmoteKit ホーム</a>
+      <a href="zooit-terms.html" class="footer-link">りようきやく</a>
+      <a href="index.html#contact" class="footer-link">おといあわせ</a>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 EmoteKit. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 EmoteKit. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-// スムーススクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -739,24 +821,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
-// キャラクタースクロールのスナップ動作
-const track = document.querySelector('.characters-track');
-if (track) {
-  let isScrolling;
-  track.addEventListener('scroll', function() {
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(function() {
-      const scrollLeft = track.scrollLeft;
-      const cardWidth = 352; // 320px + 32px gap
-      const nearestCard = Math.round(scrollLeft / cardWidth);
-      track.scrollTo({
-        left: nearestCard * cardWidth,
-        behavior: 'smooth'
-      });
-    }, 66);
-  });
-}
 </script>
 
 </body>
