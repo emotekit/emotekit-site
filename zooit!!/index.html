@@ -892,3 +892,84 @@
     </div>
   </div>
 </div>
+    </div>
+</section>
+<section class="line-stickers">
+  <div class="container">
+    <h2>LINEスタンプ発売中！</h2>
+<div class="sticker-showcase">
+  <div class="sticker-item">
+    <img src="../images/9.png" alt="スタンプ1">
+  </div>
+  <div class="sticker-item">
+    <img src="../images/10.png" alt="スタンプ2">
+  </div>
+  <div class="sticker-item">
+    <img src="../images/11.png" alt="スタンプ3">
+  </div>
+  <div class="sticker-item">
+    <img src="../images/1.png" alt="スタンプ4">
+  </div>
+  <div class="sticker-item">
+    <img src="../images/2.png" alt="スタンプ5">
+  </div>
+  <div class="sticker-item">
+    <img src="../images/9.png" alt="スタンプ6">
+  </div>
+</div>
+
+<a href="#" class="line-button">
+  <i class="fab fa-line"></i>
+  スタンプをGET
+</a>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="../index.html" class="footer-link">ホーム</a>
+      <a href="../zooit-terms.html" class="footer-link">利用規約</a>
+      <a href="../index.html#contact" class="footer-link">お問い合わせ</a>
+    </div>
+    <p>&copy; 2025 EmoteKit. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+// スムーススクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// スクロールアニメーション
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.flow-card, .feature-block, .animal-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'all 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
