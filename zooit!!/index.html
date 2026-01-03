@@ -97,16 +97,16 @@
     /* ヒーローセクション */
     .hero {
       background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
-      padding: 140px 0 100px;
+      padding: 120px 0 80px;
       margin-top: 72px;
       text-align: center;
     }
     
     .hero h1 {
-      font-size: 80px;
+      font-size: 72px;
       font-weight: 900;
       color: #ff6b35;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       letter-spacing: -2px;
       animation: bounce 2s ease infinite;
     }
@@ -117,24 +117,18 @@
     }
     
     .hero-tagline {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       color: #202124;
-      margin-bottom: 12px;
-    }
-    
-    .hero-sub {
-      font-size: 22px;
-      color: #5f6368;
-      margin-bottom: 60px;
+      margin-bottom: 48px;
     }
     
     .hero-image {
-      max-width: 700px;
-      margin: 0 auto 50px;
-      border-radius: 24px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 25px 70px rgba(255, 107, 53, 0.35);
+      box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
       animation: float 3s ease-in-out infinite;
     }
     
@@ -163,11 +157,11 @@
       gap: 10px;
       background: #ff6b35;
       color: white;
-      padding: 20px 44px;
+      padding: 18px 40px;
       text-decoration: none;
       border-radius: 30px;
       font-weight: 700;
-      font-size: 19px;
+      font-size: 18px;
       transition: all 0.3s ease;
       box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
     }
@@ -190,34 +184,186 @@
     
     /* セクション共通 */
     section {
+      padding: 80px 0;
+    }
+    
+    /* ゲームシステム */
+    .game-system {
+      background: #ffffff;
       padding: 100px 0;
     }
     
-    .section-title {
-      font-size: 48px;
-      font-weight: 800;
-      color: #202124;
-      margin-bottom: 24px;
+    .system-intro {
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+    
+    .system-intro h2 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #ff6b35;
+      margin-bottom: 24px;
       letter-spacing: -1px;
     }
     
-    .section-subtitle {
+    .system-intro p {
       font-size: 20px;
       color: #5f6368;
-      margin-bottom: 70px;
-      text-align: center;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.8;
+    }
+    
+    .system-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+    
+    .flow-card {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      border: 3px solid #ffe8dc;
+      transition: all 0.3s ease;
+    }
+    
+    .flow-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+      border-color: #ff6b35;
+    }
+    
+    .flow-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      margin: 0 auto 24px;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+    
+    .flow-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #202124;
+      margin-bottom: 16px;
+    }
+    
+    .flow-card p {
+      font-size: 16px;
+      color: #5f6368;
+      line-height: 1.7;
+    }
+    
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      margin-top: 60px;
+    }
+    
+    .feature-block {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+      border-radius: 24px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .feature-block::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+      transition: all 0.6s ease;
+    }
+    
+    .feature-block:hover::before {
+      transform: scale(1.2);
+    }
+    
+    .feature-block:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(255, 107, 53, 0.25);
+    }
+    
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+      display: block;
+    }
+    
+    .feature-block h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ff6b35;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .feature-block p {
+      font-size: 17px;
+      color: #5f6368;
+      line-height: 1.8;
+      position: relative;
+    }
+    
+    .feature-block ul {
+      list-style: none;
+      margin-top: 20px;
+      position: relative;
+    }
+    
+    .feature-block li {
+      font-size: 16px;
+      color: #5f6368;
+      padding: 8px 0;
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .feature-block li::before {
+      content: '💪';
+      position: absolute;
+      left: 0;
+      font-size: 18px;
     }
     
     /* どうぶつたち */
     .animals {
-      background: #ffffff;
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
       position: relative;
       overflow: hidden;
+    }
+    
+    .animals h2 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #ff6b35;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+    
+    .animals-subtitle {
+      font-size: 20px;
+      color: #5f6368;
+      text-align: center;
+      margin-bottom: 60px;
     }
     
     .animals-scroll-container {
@@ -244,7 +390,7 @@
     }
     
     .animal-card {
-      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+      background: white;
       border-radius: 24px;
       overflow: hidden;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -279,7 +425,6 @@
     .animal-info {
       padding: 24px;
       text-align: center;
-      background: white;
     }
     
     .animal-info h3 {
@@ -293,37 +438,6 @@
       color: #5f6368;
       font-size: 15px;
       line-height: 1.6;
-    }
-    
-    /* 説明セクション */
-    .description {
-      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
-      text-align: center;
-    }
-    
-    .description-content {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      padding: 60px 50px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    }
-    
-    .description-content p {
-      font-size: 19px;
-      color: #5f6368;
-      line-height: 2;
-      margin-bottom: 24px;
-    }
-    
-    .description-content p:last-child {
-      margin-bottom: 0;
-    }
-    
-    .highlight {
-      color: #ff6b35;
-      font-weight: 700;
     }
     
     /* LINEスタンプセクション */
@@ -353,20 +467,41 @@
       100% { transform: translateX(-50%); }
     }
     
-    .line-stickers .section-title {
+    .line-stickers h2 {
       color: white;
       font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 32px;
       position: relative;
       z-index: 1;
-      margin-bottom: 16px;
     }
     
-    .line-stickers p {
-      color: rgba(255, 255, 255, 0.95);
-      font-size: 18px;
+    .sticker-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
-      margin-bottom: 32px;
+    }
+    
+    .sticker-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .sticker-item:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sticker-item img {
+      width: 100%;
+      height: auto;
     }
     
     .line-button {
@@ -378,8 +513,9 @@
       padding: 16px 40px;
       text-decoration: none;
       border-radius: 30px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 18px;
+      margin-top: 32px;
       transition: all 0.3s ease;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       position: relative;
@@ -427,19 +563,24 @@
       }
       
       .hero h1 {
-        font-size: 52px;
+        font-size: 48px;
       }
       
       .hero-tagline {
-        font-size: 24px;
+        font-size: 22px;
       }
       
-      .hero-sub {
-        font-size: 18px;
-      }
-      
-      .section-title {
+      .system-intro h2 {
         font-size: 36px;
+      }
+      
+      .features-section {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .feature-block {
+        padding: 32px;
       }
       
       .animal-card {
@@ -456,20 +597,17 @@
         justify-content: center;
       }
       
+      .sticker-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 12px;
+      }
+      
       section {
-        padding: 70px 0;
+        padding: 60px 0;
       }
       
-      .description-content {
-        padding: 40px 30px;
-      }
-      
-      .description-content p {
-        font-size: 17px;
-      }
-      
-      .line-stickers {
-        padding: 50px 0;
+      .system-flow {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -497,7 +635,6 @@
   <div class="container">
     <h1>ZooIt!!</h1>
     <p class="hero-tagline">まいにち続く、かわいい筋肉習慣。</p>
-    <p class="hero-sub">あのマッチョ、逃げる前に鍛えよう。</p>
     
     <div class="hero-image">
       <img src="../images/2.png" alt="ZooIt!! きんトレ動物園" onerror="this.src='../images/1.png'">
@@ -513,10 +650,91 @@
   </div>
 </section>
 
+<section class="game-system">
+  <div class="container">
+    <div class="system-intro">
+      <h2>ゆるきもかわなマッチョどうぶつたちと、<br>おうちで楽しくきんトレ！</h2>
+      <p>トレーニングして、育てて、コレクション。RPGみたいに楽しめる、新感覚フィットネスアプリ。</p>
+    </div>
+    
+    <div class="system-flow">
+      <div class="flow-card">
+        <div class="flow-number">1</div>
+        <h3>きんトレする</h3>
+        <p>腕立て、スクワットなど好きなメニューを選んで、どうぶつと一緒にトレーニング。MPとささみチケットがたまるよ！</p>
+      </div>
+      
+      <div class="flow-card">
+        <div class="flow-number">2</div>
+        <h3>どうぶつ育てる</h3>
+        <p>レベルアップで新しいポーズを覚える。毎日MPを使って世話をしないと、逃げちゃうかも...？</p>
+      </div>
+      
+      <div class="flow-card">
+        <div class="flow-number">3</div>
+        <h3>仲間を増やす</h3>
+        <p>トレ後にランダムで挑戦者が現れる！スカウトに成功すると、レアなマッチョに会えるかも。</p>
+      </div>
+      
+      <div class="flow-card">
+        <div class="flow-number">4</div>
+        <h3>動物園を飾る</h3>
+        <p>展示スペースをカスタマイズして自分だけの動物園をつくろう。スコアが高いとマッチョな観客が来てくれるよ！</p>
+      </div>
+    </div>
+    
+    <div class="features-section">
+      <div class="feature-block">
+        <span class="feature-icon">🎮</span>
+        <h3>RPG感覚で楽しめる</h3>
+        <p>どうぶつのレベルアップ、アイテム収集、スカウトシステム。ゲームみたいに夢中になれる仕組みがいっぱい。</p>
+        <ul>
+          <li>レベル20ごとにMP最大値が上昇</li>
+          <li>ダンベルやプロテインで成長を加速</li>
+          <li>週間イベントで限定どうぶつをGET</li>
+        </ul>
+      </div>
+      
+      <div class="feature-block">
+        <span class="feature-icon">🏆</span>
+        <h3>コレクション要素</h3>
+        <p>レア度★1〜★6まで、個性豊かなマッチョどうぶつたちを集めよう。毛並みスコアやポーズで個体差も。</p>
+        <ul>
+          <li>動物図鑑で成長履歴を確認</li>
+          <li>座右の銘辞典でユーモラスな名言を楽しむ</li>
+          <li>3ヶ月ごとにラインナップ更新</li>
+        </ul>
+      </div>
+      
+      <div class="feature-block">
+        <span class="feature-icon">🎨</span>
+        <h3>カスタマイズ自由</h3>
+        <p>環境とポーズを組み合わせて、じぶんだけの動物園を演出。フレンドと見せ合って「マッスルだね！」を送り合おう。</p>
+        <ul>
+          <li>ささみチケットで環境・ポーズ交換</li>
+          <li>展示作成数は最大5つまで</li>
+          <li>SNSで自慢＆フレンド機能</li>
+        </ul>
+      </div>
+      
+      <div class="feature-block">
+        <span class="feature-icon">📊</span>
+        <h3>評判システム</h3>
+        <p>どうぶつの数が多いほど評判UP。評判が良いとレアなチャレンジャーが来たり、ログボ報酬が増えるよ。</p>
+        <ul>
+          <li>評判10段階でスカウト成功率UP</li>
+          <li>マッチョ観客の来訪頻度が上昇</li>
+          <li>連続トレーニングボーナス（最大7日）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="animals">
   <div class="container">
-    <h2 class="section-title">マッチョなどうぶつたち</h2>
-    <p class="section-subtitle">個性豊かな仲間たちが、あなたをまってる！</p>
+    <h2>マッチョなどうぶつたち</h2>
+    <p class="animals-subtitle">個性豊かな仲間たちが、あなたをまってる！</p>
   </div>
   
   <div class="animals-scroll-container">
@@ -581,7 +799,7 @@
         </div>
       </div>
       
-      <!-- 無限スクロール用に複製 -->
+      <!-- 無限スクロール用に同じカードを複製 -->
       <div class="animal-card">
         <div class="animal-image">
           <img src="../images/9.png" alt="ライオン">
@@ -645,29 +863,36 @@
   </div>
 </section>
 
-<section class="description">
-  <div class="container">
-    <h2 class="section-title">ZooIt!!って？</h2>
-    <div class="description-content">
-      <p>うでたて、スクワットなど<span class="highlight">自重トレ</span>を選んで、マッチョな動物と一緒に毎日トレーニング。</p>
-      <p>どうぶつは<span class="highlight">レベルアップで新ポーズ習得</span>、さらに<span class="highlight">トレ後ランダムで挑戦者</span>が現れてスカウトチャンス！</p>
-      <p>展示スペースをカスタマイズして、<span class="highlight">じぶんだけの動物園</span>をつくろう。展示スコアが高いほど、マッチョな観客が来て報酬がもらえるよ！</p>
-    </div>
-  </div>
-</section>
-
 <section class="line-stickers">
   <div class="container">
-    <h2 class="section-title">LINEスタンプ発売中</h2>
-    <p>マッチョどうぶつたちのスタンプで、トークも筋肉モリモリ💪</p>
+    <h2>LINEスタンプ発売中！</h2>
     
-    <a href="#" class="line-button">
-      <i class="fab fa-line"></i>
-      スタンプをGET
-    </a>
+    <div class="sticker-showcase">
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ1">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/10.png" alt="スタンプ2">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/11.png" alt="スタンプ3">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/1.png" alt="スタンプ4">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/2.png" alt="スタンプ5">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ6">
+      </div>
+    </div>
+<a href="#" class="line-button">
+  <i class="fab fa-line"></i>
+  スタンプをGET
+</a>
   </div>
 </section>
-
 <footer>
   <div class="container">
     <div class="footer-links">
@@ -678,7 +903,6 @@
     <p>&copy; 2025 EmoteKit. All rights reserved.</p>
   </div>
 </footer>
-
 <script>
 // スムーススクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -709,13 +933,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('.animal-card').forEach(el => {
+document.querySelectorAll('.flow-card, .feature-block, .animal-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'all 0.6s ease';
   observer.observe(el);
 });
 </script>
-
 </body>
 </html>
