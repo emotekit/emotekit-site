@@ -54,15 +54,23 @@
     
     .logo-section {
       display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .brand-link {
+      display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
+      text-decoration: none;
+      margin-bottom: 4px;
     }
     
     .logo {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       background: transparent;
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -76,11 +84,27 @@
     }
     
     .brand-name {
-      font-size: 28px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #777;
+      letter-spacing: -0.3px;
+    }
+    
+    .product-name {
+      font-size: 32px;
       font-weight: 800;
       color: #ff6b35;
       text-decoration: none;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.8px;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    
+    .product-tagline {
+      font-size: 13px;
+      color: #999;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
     
     .nav-buttons {
@@ -125,8 +149,8 @@
     /* ヒーローセクション */
     .hero {
       background: linear-gradient(180deg, #fff 0%, #fff5f0 100%);
-      padding: 140px 0 100px;
-      margin-top: 84px;
+      padding: 160px 0 100px;
+      margin-top: 104px;
     }
     
     .hero-content {
@@ -421,6 +445,100 @@
       margin: 0;
     }
     
+    /* LINEスタンプセクション */
+    .line-stickers {
+      background: linear-gradient(135deg, #06C755 0%, #00B900 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+    
+    .line-stickers::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="rgba(255,255,255,0.1)" d="M0,0 C150,50 350,100 600,80 C850,60 1050,20 1200,40 L1200,120 L0,120 Z"/></svg>');
+      background-size: cover;
+      animation: wave 10s linear infinite;
+    }
+    
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .line-stickers h2 {
+      color: white;
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .line-stickers p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      opacity: 0.95;
+    }
+    
+    .sticker-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .sticker-item {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .sticker-item:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sticker-item img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .line-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: #06C755;
+      padding: 18px 40px;
+      text-decoration: none;
+      border-radius: 16px;
+      font-weight: 800;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .line-button:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+    }
+    
     /* CTA セクション */
     .cta-section {
       background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
@@ -451,7 +569,7 @@
     
     /* フッター */
     footer {
-      background: #3c3c3c;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
       color: white;
       padding: 60px 0 40px;
     }
@@ -470,12 +588,12 @@
     .footer-brand h3 {
       font-size: 24px;
       font-weight: 800;
-      color: #ff6b35;
+      color: white;
       margin-bottom: 16px;
     }
     
     .footer-brand p {
-      color: #aaa;
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.6;
       font-size: 15px;
     }
@@ -496,21 +614,21 @@
     }
     
     .footer-links a {
-      color: #aaa;
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
       font-size: 15px;
       transition: color 0.2s ease;
     }
     
     .footer-links a:hover {
-      color: #ff6b35;
+      color: white;
     }
     
     .footer-bottom {
-      border-top: 1px solid #555;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: 32px;
       text-align: center;
-      color: #aaa;
+      color: rgba(255, 255, 255, 0.9);
       font-size: 14px;
     }
     
@@ -523,7 +641,7 @@
     .social-link {
       width: 40px;
       height: 40px;
-      background: #555;
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -534,7 +652,8 @@
     }
     
     .social-link:hover {
-      background: #ff6b35;
+      background: white;
+      color: #ff6b35;
       transform: scale(1.1);
     }
     
@@ -589,7 +708,8 @@
       }
       
       .hero {
-        padding: 120px 0 80px;
+        padding: 140px 0 80px;
+        margin-top: 104px;
       }
       
       .hero h1 {
@@ -629,6 +749,23 @@
       .animal-card {
         min-width: 200px;
       }
+      
+      .sticker-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+      }
+      
+      .product-name {
+        font-size: 26px;
+      }
+      
+      .brand-name {
+        font-size: 16px;
+      }
+      
+      .product-tagline {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
@@ -637,13 +774,16 @@
 <nav>
   <div class="nav-content">
     <div class="logo-section">
-      <div class="logo">
-        <img src="../images/1.png" alt="ZooIt!! Logo">
-      </div>
-      <a href="#" class="brand-name">ZooIt!!</a>
+      <a href="../index.html" class="brand-link">
+        <div class="logo">
+          <img src="../images/1.png" alt="EmoteKit Logo">
+        </div>
+        <span class="brand-name">EmoteKit</span>
+      </a>
+      <div class="product-name">ZooIt!!</div>
+      <div class="product-tagline">きんトレ動物園</div>
     </div>
     <div class="nav-buttons">
-      <a href="../index.html" class="nav-link">ホーム</a>
       <a href="#features" class="nav-link">機能</a>
       <a href="#animals" class="nav-link">どうぶつ</a>
       <button class="nav-cta">アプリを入手</button>
@@ -823,65 +963,93 @@
         <div class="animal-image">
           <img src="../images/9.png" alt="ライオン">
         </div>
-        <div class="animal-info">
-          <h3>ライオン</h3>
-          <p>百獣の王。力強くサポート！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/10.png" alt="ゴリラ">
-        </div>
-        <div class="animal-info">
-          <h3>ゴリラ</h3>
-          <p>パワフルでたくましい！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/11.png" alt="カンガルー">
-        </div>
-        <div class="animal-info">
-          <h3>カンガルー</h3>
-          <p>ジャンプのたつじん！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/1.png" alt="クマ">
-        </div>
-        <div class="animal-info">
-          <h3>クマ</h3>
-          <p>大きな体とパワーが魅力！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/2.png" alt="トラ">
-        </div>
-        <div class="animal-info">
-          <h3>トラ</h3>
-          <p>俊敏で美しいフォーム！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/9.png" alt="サイ">
-        </div>
-        <div class="animal-info">
-          <h3>サイ</h3>
-          <p>重量級パワーファイター！</p>
-        </div>
-      </div>
+        <div classContinue12:13="animal-info">
+<h3>ライオン</h3>
+<p>百獣の王。力強くサポート！</p>
+</div>
+</div>
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/10.png" alt="ゴリラ">
+    </div>
+    <div class="animal-info">
+      <h3>ゴリラ</h3>
+      <p>パワフルでたくましい！</p>
     </div>
   </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/11.png" alt="カンガルー">
+    </div>
+    <div class="animal-info">
+      <h3>カンガルー</h3>
+      <p>ジャンプのたつじん！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/1.png" alt="クマ">
+    </div>
+    <div class="animal-info">
+      <h3>クマ</h3>
+      <p>大きな体とパワーが魅力！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/2.png" alt="トラ">
+    </div>
+    <div class="animal-info">
+      <h3>トラ</h3>
+      <p>俊敏で美しいフォーム！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/9.png" alt="サイ">
+    </div>
+    <div class="animal-info">
+      <h3>サイ</h3>
+      <p>重量級パワーファイター！</p>
+    </div>
+  </div>
+</div>
+  </div>
 </section>
-
+<section class="line-stickers">
+  <div class="container">
+    <h2>LINEスタンプ発売中！</h2>
+    <p>マッチョどうぶつたちのスタンプで、毎日の会話をもっと楽しく</p>
+    <div class="sticker-showcase">
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ1">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/10.png" alt="スタンプ2">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/11.png" alt="スタンプ3">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/1.png" alt="スタンプ4">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/2.png" alt="スタンプ5">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ6">
+      </div>
+    </div>
+<a href="#" class="line-button">
+  <i class="fab fa-line"></i>
+  スタンプをGET
+</a>
+  </div>
+</section>
 <section class="cta-section">
   <div class="container">
     <h2>今日からマッチョライフを<br>はじめよう</h2>
@@ -900,7 +1068,6 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="container">
     <div class="footer-content">
@@ -919,28 +1086,64 @@
           </a>
         </div>
       </div>
-      
-      <div class="footer-column">
-        <h4>製品</h4>
-        <ul class="footer-links">
-          <li><a href="#features">機能</a></li>
-          <li><a href="#animals">どうぶつ</a></li>
-          <li><a href="#">LINEスタンプ</a></li>
-          <li><a href="#">アップデート</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>会社情報</h4>
-        <ul class="footer-links">
-          <li><a href="../index.html">EmoteKit</a></li>
-          <li><a href="#">採用情報</a></li>
-          <li><a href="#">プレスキット</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>サポート</h4>
-        <ul class="footer-links">
-          <li><a href="#">ヘルプセンター
+  <div class="footer-column">
+    <h4>製品</h4>
+    <ul class="footer-links">
+      <li><a href="#features">機能</a></li>
+      <li><a href="#animals">どうぶつ</a></li>
+      <li><a href="#line-stickers">LINEスタンプ</a></li>
+      <li><a href="#">アップデート</a></li>
+    </ul>
+  </div>
+  
+  <div class="footer-column">
+    <h4>会社情報</h4>
+    <ul class="footer-links">
+      <li><a href="../index.html">EmoteKit</a></li>
+      <li><a href="#">採用情報</a></li>
+      <li><a href="#">プレスキット</a></li>
+      <li><a href="#">お問い合わせ</a></li>
+    </ul>
+  </div>
+  
+  <div class="footer-column">
+    <h4>サポート</h4>
+    <ul class="footer-links">
+      <li><a href="#">ヘルプセンター</a></li>
+      <li><a href="../zooit-terms.html">利用規約</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">よくある質問</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 EmoteKit. All rights reserved.</p>
+</div>
+  </div>
+</footer>
+<script>
+// スムーススクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// ナビゲーションCTAボタン
+document.querySelector('.nav-cta').addEventListener('click', function() {
+  document.querySelector('.cta-section').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+});
+</script>
+</body>
+</html>
