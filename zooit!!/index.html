@@ -30,36 +30,30 @@
       padding: 0 24px;
     }
     
-    /* ナビゲーション - メインページと統一 */
-    nav {
+    /* 会社ナビゲーション */
+    .company-nav {
       background: #ffffff;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 101;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     
-    .nav-content {
+    .company-nav-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
+      padding: 12px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
-    .logo-section {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    
-    .brand-link {
+    .company-logo-section {
       display: flex;
       align-items: center;
       gap: 4px;
-      text-decoration: none;
-      margin-bottom: 4px;
     }
     
     .logo {
@@ -87,24 +81,39 @@
       letter-spacing: -0.5px;
     }
     
-    /* ZooItロゴセクション - オレンジ背景で区別 */
-    .product-section {
+    /* 製品ナビゲーション（オレンジ背景） */
+    .product-nav {
       background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
-      padding: 12px 20px;
-      border-radius: 12px;
-      margin-top: 8px;
-      box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .product-logo-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     
     .product-name {
       font-size: 28px;
       font-weight: 800;
-      color: #ffffff;
+      color: white;
       text-decoration: none;
       letter-spacing: -0.5px;
       line-height: 1;
-      margin-bottom: 4px;
-      display: block;
     }
     
     .product-tagline {
@@ -114,55 +123,56 @@
       letter-spacing: 0.3px;
     }
     
-    .nav-links {
+    .product-nav-links {
       display: flex;
       align-items: center;
       gap: 24px;
     }
     
-    .nav-link {
-      color: #3c4043;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.2s ease;
-    }
-    
-    .nav-link:hover {
-      color: #ff6b35;
-    }
-    
-    .nav-cta {
-      background: #ff6b35;
+    .product-nav-link {
       color: white;
-      padding: 12px 24px;
-      border-radius: 24px;
       text-decoration: none;
       font-weight: 600;
       font-size: 16px;
       transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      opacity: 0.9;
     }
     
-    .nav-cta:hover {
-      background: #ff5722;
+    .product-nav-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+    
+    .product-nav-cta {
+      background: white;
+      color: #ff6b35;
+      padding: 10px 20px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
     
     /* ヒーローセクション */
     .hero {
       background: linear-gradient(135deg, #f8f9fa 0%, #fff5f0 100%);
       padding: 120px 0 80px;
-      margin-top: 72px;
+      margin-top: 112px;
     }
     
     .hero-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       align-items: center;
     }
     
@@ -244,8 +254,8 @@
     
     .badge {
       display: inline-block;
-      background: rgba(255, 107, 53, 0.1);
-      color: #ff6b35;
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
       padding: 6px 12px;
       border-radius: 8px;
       font-size: 13px;
@@ -258,15 +268,15 @@
       padding: 80px 0;
     }
     
-    .section-alternate {
-      background: #f8f9fa;
+    /* 機能セクション */
+    .features-section {
+      background: white;
     }
     
-    /* 機能セクション */
     .features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       align-items: center;
       margin-bottom: 80px;
     }
@@ -331,7 +341,7 @@
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 60px;
+      gap: 40px;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -369,7 +379,7 @@
       letter-spacing: -0.5px;
     }
     
-    .animals-section p {
+    .animals-section .section-description {
       font-size: 18px;
       color: #5f6368;
       margin-bottom: 60px;
@@ -406,7 +416,7 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
       min-width: 240px;
-      max-width: 240px;
+      width: 240px;
       flex-shrink: 0;
       border: 1px solid #e8eaed;
     }
@@ -576,7 +586,7 @@
     @media (max-width: 1024px) {
       .hero-content {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
       }
       
       .hero-text {
@@ -590,7 +600,7 @@
       
       .features-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
       }
       
       .features-grid.reverse {
@@ -599,21 +609,12 @@
       
       .stats-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        gap: 30px;
       }
       
       .footer-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
-      }
-      
-      .animal-card {
-        min-width: 200px;
-        max-width: 200px;
-      }
-      
-      .animal-image {
-        height: 200px;
       }
     }
     
@@ -623,11 +624,15 @@
         padding: 0 16px;
       }
       
-      .nav-content {
-        padding: 12px 0;
+      .company-nav-content {
+        padding: 12px 16px;
       }
       
-      .nav-links {
+      .product-nav-content {
+        padding: 12px 16px;
+      }
+      
+      .product-nav-links {
         display: none;
       }
       
@@ -640,15 +645,6 @@
         height: 28px;
       }
       
-      .logo-section {
-        gap: 2px;
-      }
-      
-      .product-section {
-        padding: 8px 16px;
-        margin-top: 6px;
-      }
-      
       .product-name {
         font-size: 24px;
       }
@@ -659,7 +655,7 @@
       
       .hero {
         padding: 100px 0 60px;
-        margin-top: 90px;
+        margin-top: 112px;
       }
       
       .hero h1 {
@@ -668,6 +664,10 @@
       
       .hero p {
         font-size: 16px;
+      }
+      
+      .hero-image {
+        min-height: 280px;
       }
       
       .feature-content h2 {
@@ -685,6 +685,8 @@
       .btn-primary {
         width: 100%;
         justify-content: center;
+        padding: 14px 24px;
+        font-size: 15px;
       }
       
       .hero-buttons {
@@ -696,18 +698,31 @@
         align-items: stretch;
       }
       
-      .hero-image {
-        min-height: 280px;
+      .stats h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
       }
       
       .stats-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
       }
       
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 32px;
+      .stat-number {
+        font-size: 48px;
+      }
+      
+      .stat-label {
+        font-size: 16px;
+      }
+      
+      .animals-section h2 {
+        font-size: 32px;
+      }
+      
+      .animals-section .section-description {
+        font-size: 16px;
+        margin-bottom: 40px;
       }
       
       .animals-carousel {
@@ -715,12 +730,12 @@
       }
       
       .animal-card {
-        min-width: 180px;
-        max-width: 180px;
+        min-width: 200px;
+        width: 200px;
       }
       
       .animal-image {
-        height: 180px;
+        height: 200px;
       }
       
       .animal-info {
@@ -736,24 +751,20 @@
       }
       
       .cta-section h2 {
-        font-size: 36px;
-      }
-      
-      .animals-section h2 {
         font-size: 32px;
       }
       
-      .stats h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
-      }
-      
-      .stat-number {
-        font-size: 48px;
-      }
-      
-      .stat-label {
+      .cta-section p {
         font-size: 16px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .footer-brand {
+        max-width: 100%;
       }
     }
     
@@ -763,57 +774,83 @@
         font-size: 28px;
       }
       
+      .hero p {
+        font-size: 15px;
+        margin-bottom: 32px;
+      }
+      
       .hero-image {
         min-height: 220px;
+      }
+      
+      .feature-content h2 {
+        font-size: 28px;
+      }
+      
+      .feature-content p {
+        font-size: 15px;
+      }
+      
+      .stats h2 {
+        font-size: 28px;
+      }
+      
+      .stat-number {
+        font-size: 40px;
+      }
+      
+      .animals-section h2 {
+        font-size: 28px;
+      }
+      
+      .animal-card {
+        min-width: 180px;
+        width: 180px;
+      }
+      
+      .animal-image {
+        height: 180px;
       }
       
       .cta-section h2 {
         font-size: 28px;
       }
       
-      .animals-section h2,
-      .stats h2,
-      .feature-content h2 {
-        font-size: 28px;
+      .product-name {
+        font-size: 20px;
       }
       
-      .animal-card {
-        min-width: 160px;
-        max-width: 160px;
-      }
-      
-      .animal-image {
-        height: 160px;
-      }
-      
-      .stat-number {
-        font-size: 40px;
+      .product-tagline {
+        font-size: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <div class="container">
-    <div class="nav-content">
-      <div class="logo-section">
-        <a href="../index.html" class="brand-link">
-          <div class="logo">
-            <img src="../images/1.png" alt="EmoteKit Logo">
-          </div>
-          <span class="brand-name">EmoteKit</span>
-        </a>
-        <div class="product-section">
-          <div class="product-name">ZooIt!!</div>
-          <div class="product-tagline">きんトレ動物園</div>
-        </div>
+<!-- 会社ナビゲーション（白背景） -->
+<nav class="company-nav">
+  <div class="company-nav-content">
+    <a href="../index.html" class="company-logo-section">
+      <div class="logo">
+        <img src="../images/1.png" alt="EmoteKit Logo">
       </div>
-      <div class="nav-links">
-        <a href="#features" class="nav-link">機能</a>
-        <a href="#animals" class="nav-link">どうぶつ</a>
-        <button class="nav-cta">アプリを入手</button>
-      </div>
+      <span class="brand-name">EmoteKit</span>
+    </a>
+  </div>
+</nav>
+
+<!-- 製品ナビゲーション（オレンジ背景） -->
+<nav class="product-nav">
+  <div class="product-nav-content">
+    <div class="product-logo-section">
+      <div class="product-name">ZooIt!!</div>
+      <div class="product-tagline">きんトレ動物園</div>
+    </div>
+    <div class="product-nav-links">
+      <a href="#features" class="product-nav-link">機能</a>
+      <a href="#animals" class="product-nav-link">どうぶつ</a>
+      <button class="product-nav-cta">アプリを入手</button>
     </div>
   </div>
 </nav>
@@ -916,7 +953,7 @@
 <section id="animals" class="animals-section">
   <div class="container">
     <h2>マッチョなどうぶつたち</h2>
-    <p>個性豊かな仲間たちが、あなたをまってる！</p>
+    <p class="section-description">個性豊かな仲間たちが、あなたをまってる！</p>
   </div>
   
   <div class="animals-carousel">
@@ -960,33 +997,31 @@
           <p>大きな体とパワーが魅力！</p>
         </div>
       </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/2.png" alt="トラ">
-        </div>
-        <div class="animal-info">
-          <h3>トラ</h3>
-          <p>俊敏で美しいフォーム！</p>
-        </div>
-      </div>
-      
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/9.png" alt="サイ">
-        </div>
-        <div class="animal-info">
-          <h3>サイ</h3>
-          <p>重量級パワーファイター！</p>
-        </div>
-      </div>
-      
-      <!-- 無限スクロール用に複製 -->
-      <div class="animal-card">
-        <div class="animal-image">
-          <img src="../images/9.png" alt="ライオン">
-          </div>
-
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/2.png" alt="トラ">
+    </div>
+    <div class="animal-info">
+      <h3>トラ</h3>
+      <p>俊敏で美しいフォーム！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/9.png" alt="サイ">
+    </div>
+    <div class="animal-info">
+      <h3>サイ</h3>
+      <p>重量級パワーファイター！</p>
+    </div>
+  </div>
+  
+  <!-- 無限スクロール用に複製 -->
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/9.png" alt="ライオン">
+    </div>
     <div class="animal-info">
       <h3>ライオン</h3>
       <p>百獣の王。力強くサポート！</p>
@@ -1126,13 +1161,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ナビゲーションCTAボタン
-document.querySelector('.nav-cta').addEventListener('click', function() {
-  document.querySelector('.cta-section').scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
+// 製品ナビゲーションCTAボタン
+const productNavCta = document.querySelector('.product-nav-cta');
+if (productNavCta) {
+  productNavCta.addEventListener('click', function() {
+    document.querySelector('.cta-section').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   });
-});
+}
 </script>
 </body>
 </html>
