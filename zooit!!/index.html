@@ -83,7 +83,7 @@
     
     /* 製品ナビゲーション（オレンジ背景） */
     .product-nav {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+      background: #ec672c;
       position: fixed;
       top: 56px;
       left: 0;
@@ -108,7 +108,7 @@
     }
     
     .product-name {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 800;
       color: white;
       text-decoration: none;
@@ -117,7 +117,7 @@
     }
     
     .product-tagline {
-      font-size: 13px;
+      font-size: 15px;
       color: rgba(255, 255, 255, 0.9);
       font-weight: 600;
       letter-spacing: 0.3px;
@@ -145,7 +145,7 @@
     
     .product-nav-cta {
       background: white;
-      color: #ff6b35;
+      color: #ec672c;
       padding: 10px 20px;
       border-radius: 24px;
       text-decoration: none;
@@ -164,8 +164,8 @@
     
     /* ヒーローセクション */
     .hero {
-      background: linear-gradient(135deg, #f8f9fa 0%, #fff5f0 100%);
-      padding: 120px 0 80px;
+      background: #f8f9fa;
+      padding: 140px 0 80px;
       margin-top: 112px;
     }
     
@@ -190,7 +190,7 @@
     }
     
     .hero-highlight {
-      color: #ff6b35;
+      color: #ec672c;
     }
     
     .hero p {
@@ -211,7 +211,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #ff6b35;
+      background: #ec672c;
       color: white;
       padding: 16px 32px;
       text-decoration: none;
@@ -220,13 +220,13 @@
       font-size: 16px;
       transition: all 0.2s ease;
       border: none;
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      box-shadow: 0 4px 12px rgba(236, 103, 44, 0.3);
     }
     
     .btn-primary:hover {
-      background: #ff5722;
+      background: #d45a23;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 6px 20px rgba(236, 103, 44, 0.4);
     }
     
     .hero-image {
@@ -237,18 +237,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 400px;
-      background: transparent;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      overflow: hidden;
+      padding: 40px;
     }
     
     .hero-image img {
       max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+      height: auto;
       display: block;
     }
     
@@ -313,54 +307,59 @@
     .feature-image {
       position: relative;
       width: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
     }
     
     .feature-image img {
-      width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
     }
     
-    /* 統計セクション */
-    .stats {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+    /* 脱走セクション */
+    .escape-section {
+      background: #ec672c;
       color: white;
-      text-align: center;
       padding: 80px 0;
     }
     
-    .stats h2 {
+    .escape-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .escape-text h2 {
       font-size: 40px;
       font-weight: 800;
-      margin-bottom: 60px;
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
     
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .stat-item {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 56px;
-      font-weight: 900;
-      margin-bottom: 12px;
-      display: block;
-    }
-    
-    .stat-label {
+    .escape-text p {
       font-size: 18px;
-      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 16px;
       opacity: 0.95;
+    }
+    
+    .escape-image {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    
+    .escape-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
     
     /* どうぶつカルーセル */
@@ -413,7 +412,6 @@
       background: white;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
       min-width: 240px;
       width: 240px;
@@ -423,8 +421,7 @@
     
     .animal-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(255, 107, 53, 0.2);
-      border-color: #ff6b35;
+      border-color: #ec672c;
     }
     
     .animal-image {
@@ -432,12 +429,16 @@
       height: 240px;
       overflow: hidden;
       background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
     
     .animal-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     
     .animal-info {
@@ -461,7 +462,7 @@
     
     /* CTA セクション */
     .cta-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #fff5f0 100%);
+      background: #f8f9fa;
       text-align: center;
       padding: 80px 0;
     }
@@ -491,7 +492,7 @@
     
     /* フッター */
     footer {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+      background: #ec672c;
       color: white;
       padding: 60px 0 40px;
     }
@@ -578,7 +579,7 @@
     
     .social-link:hover {
       background: white;
-      color: #ff6b35;
+      color: #ec672c;
       transform: scale(1.1);
     }
     
@@ -607,9 +608,9 @@
         direction: ltr;
       }
       
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+      .escape-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
       
       .footer-content {
@@ -646,15 +647,15 @@
       }
       
       .product-name {
-        font-size: 24px;
+        font-size: 28px;
       }
       
       .product-tagline {
-        font-size: 11px;
+        font-size: 13px;
       }
       
       .hero {
-        padding: 100px 0 60px;
+        padding: 120px 0 60px;
         margin-top: 112px;
       }
       
@@ -667,7 +668,7 @@
       }
       
       .hero-image {
-        min-height: 280px;
+        padding: 20px;
       }
       
       .feature-content h2 {
@@ -676,6 +677,22 @@
       
       .feature-content p {
         font-size: 16px;
+      }
+      
+      .feature-image {
+        padding: 20px;
+      }
+      
+      .escape-text h2 {
+        font-size: 32px;
+      }
+      
+      .escape-text p {
+        font-size: 16px;
+      }
+      
+      .escape-image {
+        padding: 20px;
       }
       
       section {
@@ -698,24 +715,6 @@
         align-items: stretch;
       }
       
-      .stats h2 {
-        font-size: 32px;
-        margin-bottom: 40px;
-      }
-      
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      
-      .stat-number {
-        font-size: 48px;
-      }
-      
-      .stat-label {
-        font-size: 16px;
-      }
-      
       .animals-section h2 {
         font-size: 32px;
       }
@@ -736,6 +735,7 @@
       
       .animal-image {
         height: 200px;
+        padding: 15px;
       }
       
       .animal-info {
@@ -779,10 +779,6 @@
         margin-bottom: 32px;
       }
       
-      .hero-image {
-        min-height: 220px;
-      }
-      
       .feature-content h2 {
         font-size: 28px;
       }
@@ -791,12 +787,12 @@
         font-size: 15px;
       }
       
-      .stats h2 {
+      .escape-text h2 {
         font-size: 28px;
       }
       
-      .stat-number {
-        font-size: 40px;
+      .escape-text p {
+        font-size: 15px;
       }
       
       .animals-section h2 {
@@ -810,6 +806,7 @@
       
       .animal-image {
         height: 180px;
+        padding: 12px;
       }
       
       .cta-section h2 {
@@ -817,11 +814,11 @@
       }
       
       .product-name {
-        font-size: 20px;
+        font-size: 24px;
       }
       
       .product-tagline {
-        font-size: 10px;
+        font-size: 12px;
       }
     }
   </style>
@@ -930,21 +927,20 @@
   </div>
 </section>
 
-<section class="stats">
+<section class="escape-section">
   <div class="container">
-    <h2>世界中で愛されています</h2>
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-number">50+</span>
-        <span class="stat-label">マッチョどうぶつ</span>
+    <div class="escape-content">
+      <div class="escape-text">
+        <h2>脱走しちゃうかも...？</h2>
+        <p>
+          毎日どうぶつたちのMPは1ずつ減っていく。MPが0になると、どうぶつは動物園から逃げ出してしまう...！
+        </p>
+        <p>
+          だから毎日トレーニングして、MPを回復させてあげよう。続けることで絆が深まり、どうぶつたちは君のパートナーになってくれるよ。
+        </p>
       </div>
-      <div class="stat-item">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">トレーニング種目</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">∞</span>
-        <span class="stat-label">カスタマイズ</span>
+      <div class="escape-image">
+        <img src="../images/10.png" alt="脱走注意" onerror="this.src='../images/1.png'">
       </div>
     </div>
   </div>
@@ -995,6 +991,66 @@
         <div class="animal-info">
           <h3>クマ</h3>
           <p>大きな体とパワーが魅力！</p>
+        </div>
+      </div>
+      
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../images/2.png" alt="トラ">
+        </div>
+        <div class="animal-info">
+          <h3>トラ</h3>
+          <p>俊敏で美しいフォーム！</p>
+        </div>
+      </div>
+      
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../images/9.png" alt="サイ">
+        </div>
+        <div class="animal-info">
+          <h3>サイ</h3>
+          <p>重量級パワーファイター！</p>
+        </div>
+      </div>
+  <!-- 複製してループ効果を作成 -->
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/9.png" alt="ライオン">
+    </div>
+    <div class="animal-info">
+      <h3>ライオン</h3>
+      <p>百獣の王。力強くサポート！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/10.png" alt="ゴリラ">
+    </div>
+    <div class="animal-info">
+      <h3>ゴリラ</h3>
+      <p>パワフルでたくましい！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/11.png" alt="カンガルー">
+    </div>
+    <div class="animal-info">
+      <h3>カンガルー</h3>
+      <p>ジャンプのたつじん！</p>
+    </div>
+  </div>
+  
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../images/1.png" alt="クマ">
+    </div>
+    <div class="animal-info">
+      <h3>クマ</h3>
+      <p>大きな体とパワーが魅力！</p>
     </div>
   </div>
   
