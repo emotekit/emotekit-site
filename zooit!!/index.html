@@ -18,16 +18,16 @@
     body {
       font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #ffffff;
-      color: #3c4043;
-      line-height: 1.7;
+      color: #3c3c3c;
+      line-height: 1.6;
       font-size: 16px;
       overflow-x: hidden;
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
     
     /* ナビゲーション */
@@ -38,7 +38,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #e5e5e5;
     }
     
     .nav-content {
@@ -46,9 +46,10 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 20px 24px;
+      padding-left: 32px;
+      padding-right: 32px;
     }
     
     .logo-section {
@@ -61,7 +62,7 @@
       width: 40px;
       height: 40px;
       background: transparent;
-      border-radius: 8px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -82,28 +83,50 @@
       letter-spacing: -0.5px;
     }
     
-    .back-link {
+    .nav-buttons {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    
+    .nav-link {
       color: #777;
       text-decoration: none;
       font-weight: 700;
       font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
       padding: 10px 20px;
       border-radius: 12px;
+      transition: all 0.2s ease;
     }
     
-    .back-link:hover {
+    .nav-link:hover {
       background: #f7f7f7;
+      color: #ff6b35;
     }
     
-    /* ヒーローセクション - Duolingoスタイル */
+    .nav-cta {
+      background: #ff6b35;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .nav-cta:hover {
+      background: #ff5722;
+      transform: scale(1.05);
+    }
+    
+    /* ヒーローセクション */
     .hero {
-      background: #ffffff;
-      padding: 120px 0 60px;
-      margin-top: 80px;
+      background: linear-gradient(180deg, #fff 0%, #fff5f0 100%);
+      padding: 140px 0 100px;
+      margin-top: 84px;
     }
     
     .hero-content {
@@ -111,216 +134,237 @@
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     
     .hero-text {
-      padding-right: 40px;
+      max-width: 560px;
     }
     
     .hero h1 {
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 800;
-      color: #ff6b35;
+      color: #3c3c3c;
       margin-bottom: 24px;
-      letter-spacing: -2px;
       line-height: 1.1;
+      letter-spacing: -1px;
     }
     
-    .hero-tagline {
-      font-size: 28px;
-      font-weight: 700;
-      color: #4b4b4b;
-      margin-bottom: 32px;
-      line-height: 1.4;
+    .hero-highlight {
+      color: #ff6b35;
     }
     
-    .hero-description {
-      font-size: 18px;
+    .hero p {
+      font-size: 22px;
       color: #777;
       margin-bottom: 40px;
-      line-height: 1.7;
+      line-height: 1.5;
+      font-weight: 500;
     }
     
-    .hero-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .hero-image img {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      display: block;
-    }
-    
-    .cta-buttons {
+    .hero-buttons {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
     
-    .cta-button {
+    .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: #58cc02;
+      gap: 10px;
+      background: #ff6b35;
       color: white;
       padding: 18px 32px;
       text-decoration: none;
       border-radius: 16px;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 17px;
       transition: all 0.2s ease;
-      border-bottom: 4px solid #58a700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      border: 3px solid #ff6b35;
     }
     
-    .cta-button:hover {
-      background: #61d805;
-      transform: translateY(-2px);
+    .btn-primary:hover {
+      background: #ff5722;
+      border-color: #ff5722;
+      transform: scale(1.05);
     }
     
-    .cta-button:active {
-      transform: translateY(0);
-      border-bottom: 2px solid #58a700;
-    }
-    
-    .coming-soon {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 11px;
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: #ff6b35;
+      padding: 18px 32px;
+      text-decoration: none;
+      border-radius: 16px;
       font-weight: 700;
-      margin-left: 8px;
-      text-transform: uppercase;
+      font-size: 17px;
+      transition: all 0.2s ease;
+      border: 3px solid #e5e5e5;
     }
     
-    /* ゲームシステム - Duolingoスタイル */
-    .game-system {
-      background: #f7f7f7;
-      padding: 100px 0;
+    .btn-secondary:hover {
+      border-color: #ff6b35;
+      transform: scale(1.05);
     }
     
-    .system-intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 80px;
-    }
-    
-    .system-intro h2 {
-      font-size: 42px;
-      font-weight: 800;
-      color: #4b4b4b;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-    }
-    
-    .system-intro p {
-      font-size: 20px;
-      color: #777;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-    
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      max-width: 1200px;
+    .hero-image {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
       margin: 0 auto;
     }
     
-    .feature-item {
-      background: white;
-      border-radius: 20px;
-      padding: 40px 32px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 2px solid #e5e5e5;
-    }
-    
-    .feature-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-      border-color: #ff6b35;
-    }
-    
-    .feature-icon {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 24px;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #f7f7f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .feature-icon img {
+    .hero-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      border-radius: 24px;
     }
     
-    .feature-item h3 {
-      font-size: 24px;
-      font-weight: 800;
-      color: #4b4b4b;
-      margin-bottom: 12px;
+    .badge {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.1);
+      color: #ff6b35;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 8px;
     }
     
-    .feature-item p {
-      font-size: 16px;
-      color: #777;
-      line-height: 1.6;
-    }
-    
-    /* どうぶつたち */
-    .animals {
-      background: #ffffff;
+    /* セクション共通 */
+    section {
       padding: 100px 0;
-      position: relative;
-      overflow: hidden;
     }
     
-    .animals h2 {
-      font-size: 42px;
+    .section-alternate {
+      background: #f7f7f7;
+    }
+    
+    /* 機能セクション */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 120px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+    
+    .features-grid:last-child {
+      margin-bottom: 0;
+    }
+    
+    .features-grid.reverse {
+      direction: rtl;
+    }
+    
+    .features-grid.reverse > * {
+      direction: ltr;
+    }
+    
+    .feature-content h2 {
+      font-size: 40px;
       font-weight: 800;
-      color: #4b4b4b;
-      text-align: center;
-      margin-bottom: 16px;
-      letter-spacing: -1px;
+      color: #3c3c3c;
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
     
-    .animals-subtitle {
+    .feature-content p {
       font-size: 20px;
       color: #777;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    
+    .feature-image {
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* 統計セクション */
+    .stats {
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+      color: white;
       text-align: center;
+      padding: 80px 0;
+    }
+    
+    .stats h2 {
+      font-size: 40px;
+      font-weight: 800;
       margin-bottom: 60px;
     }
     
-    .animals-scroll-container {
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 56px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+    
+    /* どうぶつカルーセル */
+    .animals-section {
+      text-align: center;
+      padding: 100px 0;
+      background: white;
+    }
+    
+    .animals-section h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #3c3c3c;
+      margin-bottom: 16px;
+    }
+    
+    .animals-section p {
+      font-size: 20px;
+      color: #777;
+      margin-bottom: 60px;
+    }
+    
+    .animals-carousel {
       position: relative;
-      width: 100%;
       overflow: hidden;
       padding: 40px 0;
     }
     
-    .animals-scroll {
+    .animals-track {
       display: flex;
-      gap: 32px;
-      animation: scroll 30s linear infinite;
+      gap: 24px;
+      animation: scroll 40s linear infinite;
       width: fit-content;
     }
     
-    .animals-scroll:hover {
+    .animals-track:hover {
       animation-play-state: paused;
     }
     
@@ -333,24 +377,23 @@
       background: white;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
-      min-width: 280px;
+      min-width: 240px;
       flex-shrink: 0;
-      border: 2px solid #e5e5e5;
+      border: 2px solid #f0f0f0;
     }
     
     .animal-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(255, 107, 53, 0.2);
       border-color: #ff6b35;
     }
     
     .animal-image {
       width: 100%;
-      height: 280px;
+      height: 240px;
       overflow: hidden;
-      position: relative;
       background: #f7f7f7;
     }
     
@@ -358,238 +401,233 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: all 0.3s ease;
-    }
-    
-    .animal-card:hover .animal-image img {
-      transform: scale(1.1);
     }
     
     .animal-info {
-      padding: 24px;
+      padding: 20px;
       text-align: center;
     }
     
     .animal-info h3 {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 800;
-      color: #4b4b4b;
-      margin-bottom: 8px;
+      color: #3c3c3c;
+      margin-bottom: 4px;
     }
     
     .animal-info p {
       color: #777;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 14px;
+      margin: 0;
     }
     
-    /* LINEスタンプセクション */
-    .line-stickers {
-      background: #06C755;
-      color: white;
+    /* CTA セクション */
+    .cta-section {
+      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      padding: 80px 0;
+      padding: 100px 0;
     }
     
-    .line-stickers h2 {
-      color: white;
-      font-size: 42px;
+    .cta-section h2 {
+      font-size: 48px;
       font-weight: 800;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
+      color: #3c3c3c;
+      margin-bottom: 24px;
+      line-height: 1.2;
     }
     
-    .line-stickers-subtitle {
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.9);
+    .cta-section p {
+      font-size: 22px;
+      color: #777;
       margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
     }
     
-    .sticker-showcase {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .sticker-item {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .sticker-item:hover {
-      transform: scale(1.1) rotate(3deg);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-    
-    .sticker-item img {
-      width: 100%;
-      height: auto;
-    }
-    
-    .line-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: white;
-      color: #06C755;
-      padding: 18px 40px;
-      text-decoration: none;
-      border-radius: 16px;
-      font-weight: 800;
-      font-size: 18px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 1;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .line-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
-    }
-    
-    .line-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     
     /* フッター */
     footer {
-      background: #ffffff;
-      color: #4b4b4b;
+      background: #3c3c3c;
+      color: white;
       padding: 60px 0 40px;
-      border-top: 1px solid #e5e5e5;
     }
     
     .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
     }
     
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
+    .footer-brand {
+      max-width: 300px;
     }
     
-    .footer-link {
-      color: #777;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.2s ease;
+    .footer-brand h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ff6b35;
+      margin-bottom: 16px;
+    }
+    
+    .footer-brand p {
+      color: #aaa;
+      line-height: 1.6;
       font-size: 15px;
     }
     
-    .footer-link:hover {
+    .footer-column h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
       color: #ff6b35;
     }
     
-    .footer-copyright {
+    .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 32px;
       text-align: center;
-      color: #afafaf;
+      color: #aaa;
       font-size: 14px;
     }
     
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: #555;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .social-link:hover {
+      background: #ff6b35;
+      transform: scale(1.1);
+    }
+    
     /* モバイル対応 */
-    @media (max-width: 968px) {
+    @media (max-width: 1024px) {
       .hero-content {
         grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
+        gap: 60px;
       }
       
       .hero-text {
-        padding-right: 0;
+        text-align: center;
+        max-width: 100%;
       }
       
-      .hero h1 {
-        font-size: 48px;
-      }
-      
-      .hero-tagline {
-        font-size: 24px;
-      }
-      
-      .cta-buttons {
+      .hero-buttons {
         justify-content: center;
       }
       
-      .feature-grid {
+      .features-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 60px;
       }
       
-      .system-intro h2,
-      .animals h2,
-      .line-stickers h2 {
-        font-size: 36px;
+      .features-grid.reverse {
+        direction: ltr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
     
     @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .nav-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      .nav-link {
+        display: none;
+      }
+      
       .hero {
-        padding: 100px 0 40px;
+        padding: 120px 0 80px;
       }
       
       .hero h1 {
         font-size: 40px;
       }
       
-      .hero-tagline {
-        font-size: 20px;
+      .hero p {
+        font-size: 18px;
       }
       
-      .hero-description {
-        font-size: 16px;
+      .feature-content h2 {
+        font-size: 32px;
       }
       
-      .animal-card {
-        min-width: 240px;
+      .feature-content p {
+        font-size: 18px;
       }
       
-      .cta-button {
+      section {
+        padding: 60px 0;
+      }
+      
+      .btn-primary, .btn-secondary {
         width: 100%;
         justify-content: center;
       }
       
-      .sticker-showcase {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+      .hero-buttons {
+        flex-direction: column;
       }
       
-      .feature-icon {
-        width: 100px;
-        height: 100px;
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
       }
       
-      .nav-content {
-        padding: 16px 24px;
-      }
-      
-      .logo {
-        width: 32px;
-        height: 32px;
-      }
-      
-      .brand-name {
-        font-size: 24px;
+      .animal-card {
+        min-width: 200px;
       }
     }
   </style>
@@ -600,14 +638,16 @@
   <div class="nav-content">
     <div class="logo-section">
       <div class="logo">
-        <img src="../images/1.png" alt="EmoteKit Logo">
+        <img src="../images/1.png" alt="ZooIt!! Logo">
       </div>
       <a href="#" class="brand-name">ZooIt!!</a>
     </div>
-    <a href="../index.html" class="back-link">
-      <i class="fas fa-arrow-left"></i>
-      ホームへ
-    </a>
+    <div class="nav-buttons">
+      <a href="../index.html" class="nav-link">ホーム</a>
+      <a href="#features" class="nav-link">機能</a>
+      <a href="#animals" class="nav-link">どうぶつ</a>
+      <button class="nav-cta">アプリを入手</button>
+    </div>
   </div>
 </nav>
 
@@ -615,16 +655,22 @@
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>マッチョどうぶつと、きんトレ！</h1>
-        <p class="hero-tagline">楽しく続けられる、新感覚フィットネスゲーム</p>
-        <p class="hero-description">
-          トレーニングして、仲間を集めて、自分だけの動物園をつくろう。続けるほど楽しくなる、おうちフィットネスの新しいカタチ。
+        <h1>
+          マッチョどうぶつと、<br>
+          <span class="hero-highlight">楽しくきんトレ</span>
+        </h1>
+        <p>
+          トレーニングして、どうぶつを育てて、自分だけの動物園をつくろう。続けるほどハマる、新感覚フィットネスアプリ。
         </p>
-        <div class="cta-buttons">
-          <a href="#" class="cta-button">
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">
             <i class="fab fa-apple"></i>
-            はじめる
-            <span class="coming-soon">準備中</span>
+            App Storeで入手
+            <span class="badge">準備中</span>
+          </a>
+          <a href="#features" class="btn-secondary">
+            詳しく見る
+            <i class="fas fa-arrow-down"></i>
           </a>
         </div>
       </div>
@@ -635,49 +681,83 @@
   </div>
 </section>
 
-<section class="game-system">
+<section id="features" class="features-section">
   <div class="container">
-    <div class="system-intro">
-      <h2>なぜZooIt!!なのか？</h2>
-      <p>ゲーム感覚で楽しく続けられる。マッチョどうぶつたちと一緒なら、フィットネスがもっと楽しくなる。</p>
+    <div class="features-grid">
+      <div class="feature-content">
+        <h2>きんトレして、<br>どうぶつを育てる</h2>
+        <p>
+          腕立て、スクワット、プランクなど、好きなメニューを選んでトレーニング。どうぶつと一緒に運動すれば、MPとささみチケットがたまるよ。
+        </p>
+        <p>
+          毎日MPを使って世話をしないと、どうぶつは逃げちゃうかも...？続けることで、どうぶつはレベルアップして新しいポーズを覚えていくよ！
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="../images/9.png" alt="きんトレする" onerror="this.src='../images/1.png'">
+      </div>
     </div>
     
-    <div class="feature-grid">
-      <div class="feature-item">
-        <div class="feature-icon">
-          <img src="../images/9.png" alt="きんトレする" onerror="this.src='../images/1.png'">
-        </div>
-        <h3>きんトレする</h3>
-        <p>腕立て、スクワットなど好きなメニューを選んで、どうぶつと一緒にトレーニング。続けるほど仲間も成長！</p>
+    <div class="features-grid reverse">
+      <div class="feature-content">
+        <h2>レアなマッチョを<br>スカウト</h2>
+        <p>
+          トレーニング後にランダムで挑戦者が現れる！スカウトに成功すると、レアなマッチョどうぶつが仲間に加わるよ。
+        </p>
+        <p>
+          どうぶつの数が増えるほど評判がUP。評判が良いと、さらにレアなチャレンジャーが来たり、ログインボーナスが増えたりするよ。
+        </p>
       </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon">
-          <img src="../images/11.png" alt="スカウトする" onerror="this.src='../images/1.png'">
-        </div>
-        <h3>スカウトする</h3>
-        <p>トレーニング後にランダムで挑戦者が現れる！スカウトに成功すると、レアなマッチョに会えるかも。</p>
+      <div class="feature-image">
+        <img src="../images/11.png" alt="スカウトする" onerror="this.src='../images/1.png'">
       </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon">
-          <img src="../images/2.png" alt="展示をつくる" onerror="this.src='../images/1.png'">
-        </div>
-        <h3>展示をつくる</h3>
-        <p>環境とポーズを組み合わせて、自分だけの動物園を演出。フレンドと見せ合って楽しもう！</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-content">
+        <h2>自分だけの<br>動物園をつくる</h2>
+        <p>
+          展示スペースをカスタマイズして、自分だけの動物園を演出しよう。環境とポーズを組み合わせて、マッチョな世界を創造！
+        </p>
+        <p>
+          ささみチケットで環境やポーズを交換。展示作成数は最大5つまで。スコアが高いとマッチョな観客が来てくれるよ。
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="../images/2.png" alt="展示をつくる" onerror="this.src='../images/1.png'">
       </div>
     </div>
   </div>
 </section>
 
-<section class="animals">
+<section class="stats">
+  <div class="container">
+    <h2>世界中で愛されています</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">マッチョどうぶつ</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">トレーニング種目</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">∞</span>
+        <span class="stat-label">カスタマイズ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="animals" class="animals-section">
   <div class="container">
     <h2>マッチョなどうぶつたち</h2>
-    <p class="animals-subtitle">個性豊かな仲間たちが、あなたをまってる！</p>
+    <p>個性豊かな仲間たちが、あなたをまってる！</p>
   </div>
   
-  <div class="animals-scroll-container">
-    <div class="animals-scroll">
+  <div class="animals-carousel">
+    <div class="animals-track">
       <div class="animal-card">
         <div class="animal-image">
           <img src="../images/9.png" alt="ライオン">
@@ -738,7 +818,7 @@
         </div>
       </div>
       
-      <!-- 無限スクロール用に同じカードを複製 -->
+      <!-- 無限スクロール用に複製 -->
       <div class="animal-card">
         <div class="animal-image">
           <img src="../images/9.png" alt="ライオン">
@@ -802,86 +882,65 @@
   </div>
 </section>
 
-<section class="line-stickers">
+<section class="cta-section">
   <div class="container">
-    <h2>LINEスタンプ発売中！</h2>
-    <p class="line-stickers-subtitle">マッチョどうぶつたちを毎日のトークで使おう</p>
-    <div class="sticker-showcase">
-      <div class="sticker-item">
-        <img src="../images/9.png" alt="スタンプ1">
-      </div>
-      <div class="sticker-item">
-        <img src="../images/10.png" alt="スタンプ2">
-      </div>
-      <div class="sticker-item">
-        <img src="../images/11.png" alt="スタンプ3">
-      </div>
-      <div class="sticker-item">
-        <img src="../images/1.png" alt="スタンプ4">
-      </div>
-      <div class="sticker-item">
-        <img src="../images/2.png" alt="スタンプ5">
-      </div>
-      <div class="sticker-item">
-        <img src="../images/9.png" alt="スタンプ6">
-      </div>
+    <h2>今日からマッチョライフを<br>はじめよう</h2>
+    <p>無料でダウンロード。楽しくトレーニングを続けられる。</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">
+        <i class="fab fa-apple"></i>
+        App Storeで入手
+        <span class="badge">準備中</span>
+      </a>
+      <a href="#" class="btn-secondary">
+        <i class="fab fa-google-play"></i>
+        Google Playで入手
+        <span class="badge">準備中</span>
+      </a>
     </div>
-
-    <a href="#" class="line-button">
-      <i class="fab fa-line"></i>
-      Get Stickers
-    </a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-links">
-      <a href="../index.html" class="footer-link">ホーム</a>
-      <a href="../zooit-terms.html" class="footer-link">利用規約</a>
-      <a href="../index.html#contact" class="footer-link">お問い合わせ</a>
-    </div>
-    <p class="footer-copyright">&copy; 2025 EmoteKit. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-// スムーススクロール
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// スクロールアニメーション
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.feature-item, .animal-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'all 0.5s ease';
-  observer.observe(el);
-});
-</script>
-
-</body>
-</html>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ZooIt!!</h3>
+        <p>マッチョどうぶつたちと楽しくきんトレ。続けるほどハマる、新感覚フィットネスゲーム。</p>
+        <div class="social-links">
+          <a href="#" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-line"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>製品</h4>
+        <ul class="footer-links">
+          <li><a href="#features">機能</a></li>
+          <li><a href="#animals">どうぶつ</a></li>
+          <li><a href="#">LINEスタンプ</a></li>
+          <li><a href="#">アップデート</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>会社情報</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">EmoteKit</a></li>
+          <li><a href="#">採用情報</a></li>
+          <li><a href="#">プレスキット</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>サポート</h4>
+        <ul class="footer-links">
+          <li><a href="#">ヘルプセンター
