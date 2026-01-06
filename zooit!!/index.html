@@ -204,7 +204,7 @@
     
     .system-flow {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
       margin-bottom: 80px;
     }
@@ -272,85 +272,6 @@
       font-size: 16px;
       color: #5f6368;
       line-height: 1.7;
-    }
-    
-    .features-section {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px;
-      margin-top: 60px;
-    }
-    
-    .feature-block {
-      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
-      border-radius: 24px;
-      padding: 48px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    
-    .feature-block::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-      transition: all 0.6s ease;
-    }
-    
-    .feature-block:hover::before {
-      transform: scale(1.2);
-    }
-    
-    .feature-block:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 50px rgba(255, 107, 53, 0.25);
-    }
-    
-    .feature-icon {
-      font-size: 48px;
-      margin-bottom: 24px;
-      display: block;
-    }
-    
-    .feature-block h3 {
-      font-size: 26px;
-      font-weight: 800;
-      color: #ff6b35;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    
-    .feature-block p {
-      font-size: 17px;
-      color: #5f6368;
-      line-height: 1.8;
-      position: relative;
-    }
-    
-    .feature-block ul {
-      list-style: none;
-      margin-top: 20px;
-      position: relative;
-    }
-    
-    .feature-block li {
-      font-size: 16px;
-      color: #5f6368;
-      padding: 8px 0;
-      padding-left: 28px;
-      position: relative;
-      line-height: 1.6;
-    }
-    
-    .feature-block li::before {
-      content: '💪';
-      position: absolute;
-      left: 0;
-      font-size: 18px;
     }
     
     /* どうぶつたち */
@@ -589,15 +510,6 @@
         font-size: 18px;
       }
       
-      .features-section {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      
-      .feature-block {
-        padding: 32px;
-      }
-      
       .animal-card {
         min-width: 240px;
       }
@@ -674,7 +586,7 @@
   <div class="container">
     <div class="system-intro">
       <h2>おうちフィットネスが、もっと続く。</h2>
-      <p>トレーニングして、育てて、コレクション。<br>続けるほどハマる、新感覚フィットネスゲーム。</p>
+      <p>トレーニングして、スカウトして、展示する。<br>続けるほどハマる、新感覚フィットネスゲーム。</p>
     </div>
     
     <div class="system-flow">
@@ -684,80 +596,25 @@
           <img src="../images/9.png" alt="きんトレする" onerror="this.src='../images/1.png'">
         </div>
         <h3>きんトレする</h3>
-        <p>腕立て、スクワットなど好きなメニューを選んで、どうぶつと一緒にトレーニング。MPとささみチケットがたまるよ！</p>
+        <p>腕立て、スクワットなど好きなメニューを選んで、どうぶつと一緒にトレーニング。MPとささみチケットがたまって、どうぶつも成長するよ！</p>
       </div>
       
       <div class="flow-card">
         <div class="flow-number">2</div>
         <div class="flow-icon">
-          <img src="../images/10.png" alt="どうぶつ育てる" onerror="this.src='../images/1.png'">
+          <img src="../images/11.png" alt="スカウトする" onerror="this.src='../images/1.png'">
         </div>
-        <h3>どうぶつ育てる</h3>
-        <p>レベルアップで新しいポーズを覚える。毎日MPを使って世話をしないと、逃げちゃうかも...？</p>
+        <h3>スカウトする</h3>
+        <p>トレ後にランダムで挑戦者が現れる！スカウトに成功すると、レアなマッチョに会えるかも。仲間を増やそう！</p>
       </div>
       
       <div class="flow-card">
         <div class="flow-number">3</div>
         <div class="flow-icon">
-          <img src="../images/11.png" alt="仲間を増やす" onerror="this.src='../images/1.png'">
+          <img src="../images/2.png" alt="展示をつくる" onerror="this.src='../images/1.png'">
         </div>
-        <h3>仲間を増やす</h3>
-        <p>トレ後にランダムで挑戦者が現れる！スカウトに成功すると、レアなマッチョに会えるかも。</p>
-      </div>
-      
-      <div class="flow-card">
-        <div class="flow-number">4</div>
-        <div class="flow-icon">
-          <img src="../images/2.png" alt="動物園を飾る" onerror="this.src='../images/1.png'">
-        </div>
-        <h3>動物園を飾る</h3>
-        <p>展示スペースをカスタマイズして自分だけの動物園をつくろう。スコアが高いとマッチョな観客が来てくれるよ！</p>
-      </div>
-    </div>
-    
-    <div class="features-section">
-      <div class="feature-block">
-        <span class="feature-icon">🎮</span>
-        <h3>RPG感覚で楽しめる</h3>
-        <p>どうぶつのレベルアップ、アイテム収集、スカウトシステム。ゲームみたいに夢中になれる仕組みがいっぱい。</p>
-        <ul>
-          <li>レベル20ごとにMP最大値が上昇</li>
-          <li>ダンベルやプロテインで成長を加速</li>
-          <li>週間イベントで限定どうぶつをGET</li>
-        </ul>
-      </div>
-      
-      <div class="feature-block">
-        <span class="feature-icon">🏆</span>
-        <h3>コレクション要素</h3>
-        <p>レア度★1〜★6まで、個性豊かなマッチョどうぶつたちを集めよう。毛並みスコアやポーズで個体差も。</p>
-        <ul>
-          <li>動物図鑑で成長履歴を確認</li>
-          <li>座右の銘辞典でユーモラスな名言を楽しむ</li>
-          <li>3ヶ月ごとにラインナップ更新</li>
-        </ul>
-      </div>
-      
-      <div class="feature-block">
-        <span class="feature-icon">🎨</span>
-        <h3>カスタマイズ自由</h3>
-        <p>環境とポーズを組み合わせて、じぶんだけの動物園を演出。フレンドと見せ合って「マッスルだね！」を送り合おう。</p>
-        <ul>
-          <li>ささみチケットで環境・ポーズ交換</li>
-          <li>展示作成数は最大5つまで</li>
-          <li>SNSで自慢＆フレンド機能</li>
-        </ul>
-      </div>
-      
-      <div class="feature-block">
-        <span class="feature-icon">📊</span>
-        <h3>評判システム</h3>
-        <p>どうぶつの数が多いほど評判UP。評判が良いとレアなチャレンジャーが来たり、ログボ報酬が増えるよ。</p>
-        <ul>
-          <li>評判10段階でスカウト成功率UP</li>
-          <li>マッチョ観客の来訪頻度が上昇</li>
-          <li>連続トレーニングボーナス（最大7日）</li>
-        </ul>
+        <h3>展示をつくる</h3>
+        <p>展示スペースをカスタマイズして自分だけの動物園をつくろう。環境とポーズを組み合わせて、マッチョな世界を演出！</p>
       </div>
     </div>
   </div>
@@ -875,55 +732,57 @@
       <div class="animal-card">
         <div class="animal-image">
           <img src="../images/2.png" alt="トラ">
-          </div>
-    <div class="animal-info">
-      <h3>トラ</h3>
-      <p>俊敏で美しいフォーム！</p>
+        </div>
+        <div class="animal-info">
+          <h3>トラ</h3>
+          <p>俊敏で美しいフォーム！</p>
+        </div>
+      </div>
+      
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../images/9.png" alt="サイ">
+        </div>
+        <div class="animal-info">
+          <h3>サイ</h3>
+          <p>重量級パワーファイター！</p>
+        </div>
+      </div>
     </div>
   </div>
-  
-  <div class="animal-card">
-    <div class="animal-image">
-      <img src="../images/9.png" alt="サイ">
-    </div>
-    <div class="animal-info">
-      <h3>サイ</h3>
-      <p>重量級パワーファイター！</p>
-    </div>
-  </div>
-</div>
-    </div>
 </section>
+
 <section class="line-stickers">
   <div class="container">
     <h2>LINEスタンプ発売中！</h2>
-<div class="sticker-showcase">
-  <div class="sticker-item">
-    <img src="../images/9.png" alt="スタンプ1">
-  </div>
-  <div class="sticker-item">
-    <img src="../images/10.png" alt="スタンプ2">
-  </div>
-  <div class="sticker-item">
-    <img src="../images/11.png" alt="スタンプ3">
-  </div>
-  <div class="sticker-item">
-    <img src="../images/1.png" alt="スタンプ4">
-  </div>
-  <div class="sticker-item">
-    <img src="../images/2.png" alt="スタンプ5">
-  </div>
-  <div class="sticker-item">
-    <img src="../images/9.png" alt="スタンプ6">
-  </div>
-</div>
+    <div class="sticker-showcase">
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ1">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/10.png" alt="スタンプ2">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/11.png" alt="スタンプ3">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/1.png" alt="スタンプ4">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/2.png" alt="スタンプ5">
+      </div>
+      <div class="sticker-item">
+        <img src="../images/9.png" alt="スタンプ6">
+      </div>
+    </div>
 
-<a href="#" class="line-button">
-  <i class="fab fa-line"></i>
-  スタンプをGET
-</a>
+    <a href="#" class="line-button">
+      <i class="fab fa-line"></i>
+      スタンプをGET
+    </a>
   </div>
 </section>
+
 <footer>
   <div class="container">
     <div class="footer-links">
@@ -934,6 +793,7 @@
     <p>&copy; 2025 EmoteKit. All rights reserved.</p>
   </div>
 </footer>
+
 <script>
 // スムーススクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -964,12 +824,13 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('.flow-card, .feature-block, .animal-card').forEach(el => {
+document.querySelectorAll('.flow-card, .animal-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'all 0.6s ease';
   observer.observe(el);
 });
 </script>
+
 </body>
 </html>
