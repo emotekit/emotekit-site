@@ -51,7 +51,7 @@
     .logo-section {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
     }
     
     .brand-link {
@@ -59,8 +59,7 @@
       align-items: center;
       gap: 4px;
       text-decoration: none;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #e8eaed;
+      margin-bottom: 4px;
     }
     
     .logo {
@@ -88,10 +87,6 @@
       letter-spacing: -0.5px;
     }
     
-    .product-info {
-      padding-top: 8px;
-    }
-    
     .product-name {
       font-size: 28px;
       font-weight: 800;
@@ -99,7 +94,7 @@
       text-decoration: none;
       letter-spacing: -0.5px;
       line-height: 1;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     
     .product-tagline {
@@ -151,7 +146,7 @@
     .hero {
       background: linear-gradient(135deg, #f8f9fa 0%, #fff5f0 100%);
       padding: 120px 0 80px;
-      margin-top: 92px;
+      margin-top: 72px;
     }
     
     .hero-content {
@@ -212,6 +207,27 @@
       background: #ff5722;
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+    
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: #ff6b35;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      border: 1px solid #e8eaed;
+    }
+    
+    .btn-secondary:hover {
+      border-color: #ff6b35;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
     }
     
     .hero-image {
@@ -623,15 +639,7 @@
       }
       
       .logo-section {
-        gap: 6px;
-      }
-      
-      .brand-link {
-        padding-bottom: 6px;
-      }
-      
-      .product-info {
-        padding-top: 6px;
+        gap: 2px;
       }
       
       .product-name {
@@ -644,7 +652,7 @@
       
       .hero {
         padding: 100px 0 60px;
-        margin-top: 84px;
+        margin-top: 64px;
       }
       
       .hero h1 {
@@ -667,7 +675,7 @@
         padding: 60px 0;
       }
       
-      .btn-primary {
+      .btn-primary, .btn-secondary {
         width: 100%;
         justify-content: center;
       }
@@ -695,12 +703,8 @@
         font-size: 32px;
       }
       
-      .stats h2 {
-        font-size: 32px;
-      }
-      
       .animals-section h2 {
-        font-size: 32px;
+        font-size: 28px;
       }
       
       .cta-section h2 {
@@ -721,10 +725,8 @@
           </div>
           <span class="brand-name">EmoteKit</span>
         </a>
-        <div class="product-info">
-          <div class="product-name">ZooIt!!</div>
-          <div class="product-tagline">きんトレ動物園</div>
-        </div>
+        <div class="product-name">ZooIt!!</div>
+        <div class="product-tagline">きんトレ動物園</div>
       </div>
       <div class="nav-links">
         <a href="#features" class="nav-link">機能</a>
@@ -751,6 +753,10 @@
             <i class="fab fa-apple"></i>
             App Storeで入手
             <span class="badge">準備中</span>
+          </a>
+          <a href="#features" class="btn-secondary">
+            詳しく見る
+            <i class="fas fa-arrow-down"></i>
           </a>
         </div>
       </div>
@@ -951,17 +957,16 @@
       
       <div class="animal-card">
         <div class="animal-image">
-          <img src="../images/9.png" alt="サイ">
-        </div>
-        <div class="animal-info">
-          <h3>サイ</h3>
-          <p>重量級パワーファイター！</p>
-        </div>
-      </div>
-    </div>
+<img src="../images/9.png" alt="サイ">
+</div>
+<div class="animal-info">
+<h3>サイ</h3>
+<p>重量級パワーファイター！</p>
+</div>
+</div>
+</div>
   </div>
 </section>
-
 <section class="cta-section">
   <div class="container">
     <h2>今日からマッチョライフを<br>はじめよう</h2>
@@ -970,11 +975,6 @@
       <a href="#" class="btn-primary">
         <i class="fab fa-apple"></i>
         App Storeで入手
-        <span class="badge">準備中</span>
-      </a>
-      <a href="#" class="btn-secondary">
-        <i class="fab fa-google-play"></i>
-        Google Playで入手
         <span class="badge">準備中</span>
       </a>
     </div>
