@@ -48,7 +48,8 @@
   <h2>第3条 情報の管理と保護</h2>
   <p>1. 収集した情報は、適切なセキュリティ対策を施したクラウドサーバー（Google Firebase等）で暗号化して保管します。<br>
   2. 不正アクセス、紛失、破壊、改ざん、漏洩などを防ぐため、技術的・組織的な安全対策を講じます。<br>
-  3. 従業員、業務委託先に対し、個人情報の適切な取扱いについて教育・監督を行います。</p>
+  3. 従業員、業務委託先に対し、個人情報の適切な取扱いについて教育・監督を行います。<br>
+  4. 本アプリが利用するクラウドサービス（Google Firebase等）のサーバーは日本国外（米国等）に所在する場合があります。これらのサービスへの情報送信は、各サービスの個人情報保護体制（Google LLCはEU-US Data Privacy Framework認定済み）のもとで行われます。詳細は各サービスのプライバシーポリシーをご確認ください。</p>
 
   <h2>第4条 第三者への提供</h2>
   <p>当方は、以下の場合を除き、ユーザーの個人情報を第三者に提供することはありません：</p>
@@ -63,15 +64,19 @@
   <h2>第5条 外部サービスの利用</h2>
   <p>本アプリは、以下の外部サービスを利用しています。各サービスは独自のプライバシーポリシーに従って情報を取り扱います：</p>
   <ul>
-    <li><strong>1. Google Firebase</strong><br>
-    用途：データ保存、認証、分析<br>
+    <li><strong>1. Google Firebase（Google LLC）</strong><br>
+    用途：認証、データ保存・同期、クラッシュ分析、パフォーマンス計測<br>
+    送信される情報：端末識別子（Instance ID）、IPアドレス、OS・アプリバージョン情報、アプリ使用状況・イベントログ、クラッシュログ・スタックトレース<br>
+    オプトアウト：端末の「設定 → プライバシー → トラッキング」またはアプリ内設定より分析データの送信を無効化できます<br>
     プライバシーポリシー：<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
-    <li><strong>2. Google Sign-In</strong><br>
+    <li><strong>2. Google Sign-In（Google LLC）</strong><br>
     用途：アカウント連携（ユーザーが選択した場合のみ）<br>
     プライバシーポリシー：<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
-    <li><strong>3. 広告配信サービス（該当する場合）</strong><br>
-    用途：広告表示<br>
-    詳細は各サービスのプライバシーポリシーをご確認ください</li>
+    <li><strong>3. Google AdMob（Google LLC）</strong><br>
+    用途：広告配信・広告効果測定<br>
+    送信される情報：広告識別子（IDFA/GAID）、IPアドレス、端末情報、アプリ使用状況<br>
+    オプトアウト：iOSは「設定 → プライバシーとセキュリティ → トラッキング」でIDFAの共有を無効化できます<br>
+    プライバシーポリシー：<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
   </ul>
 
   <h2>第6条 Cookie及び類似技術</h2>
