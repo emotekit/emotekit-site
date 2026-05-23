@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oma.ai 招待 | EmoteKit</title>
+  <link rel="icon" type="image/png" href="../../images/oma-ai-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6772423606">
+  <meta name="theme-color" content="#0a0a0e">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: linear-gradient(180deg, #0a0a0e 0%, #2a0a18 100%);
+      color: #fff; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; -webkit-font-smoothing: antialiased;
+    }
+    .card { text-align: center; max-width: 420px; width: 100%; }
+    .mark { width: 88px; height: 88px; margin: 0 auto 16px; }
+    .mark img { width: 100%; height: 100%; object-fit: contain;
+                filter: drop-shadow(0 8px 28px rgba(255, 51, 105, .45)); }
+    h1 { font-size: 38px; font-weight: 900; letter-spacing: -1px;
+         margin-bottom: 8px; }
+    .lead { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 32px; }
+    .code-wrap {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px; padding: 24px; margin-bottom: 28px;
+    }
+    .code-label { font-size: 11px; font-weight: 800;
+                  letter-spacing: 1.2px; text-transform: uppercase;
+                  color: #ff3369; margin-bottom: 8px; }
+    .code {
+      font-family: 'SF Mono', ui-monospace, Menlo, monospace;
+      font-size: 36px; font-weight: 700; letter-spacing: 3px;
+      margin-bottom: 16px; user-select: all;
+    }
+    .copy {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: rgba(255,255,255,.8);
+      background: rgba(255,255,255,.08);
+      padding: 8px 14px; border-radius: 18px;
+      border: none; cursor: pointer; transition: all .2s;
+    }
+    .copy:hover { background: rgba(255,255,255,.14); color: #fff; }
+    .copy.copied { background: #ff3369; color: #fff; }
+    .btn {
+      display: block; width: 100%;
+      background: #ff3369; color: #fff; text-decoration: none;
+      padding: 18px; font-size: 17px; font-weight: 700;
+      border-radius: 28px; margin-bottom: 12px;
+      box-shadow: 0 8px 24px rgba(255,51,105,.4);
+      transition: transform .15s;
+    }
+    .btn:active { transform: scale(.97); }
+    .hint { font-size: 13px; color: rgba(255,255,255,.5);
+            line-height: 1.6; margin-top: 24px; }
+    .hint a { color: rgba(255,255,255,.7); }
+    .meta { font-size: 11px; color: rgba(255,255,255,.3);
+            margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark"><img src="../../images/oma-ai-icon.png" alt="Oma.ai"></div>
+    <h1>Oma.ai に招待されました</h1>
+    <p class="lead">スクショ5枚で、その人らしいAIに。</p>
+
+    <div class="code-wrap">
+      <div class="code-label">招待コード</div>
+      <div class="code" id="code">— — — — — — — —</div>
+      <button class="copy" id="copyBtn" onclick="doCopy()">
+        <span id="copyLabel">コピー</span>
+      </button>
+    </div>
+
+    <a class="btn" id="storeBtn" href="https://apps.apple.com/jp/app/id6772423606">
+      App Store で入手
+    </a>
+
+    <p class="hint">
+      アプリをインストール後にアプリを開き、上の招待コードを入力してください。<br>
+      アプリ取得済みの方はこのページが見えていません — タップで自動的にアプリが開きます。
+    </p>
+
+    <p class="meta">© 2026 EmoteKit · <a href="../privacy.html" style="color:rgba(255,255,255,.4);">プライバシー</a> · <a href="../terms.html" style="color:rgba(255,255,255,.4);">利用規約</a></p>
+  </div>
+
+  <script>
+    // Extract code from path (/oma-ai/i/<CODE>) — last segment.
+    const parts = location.pathname.split('/').filter(Boolean);
+    const rawCode = parts[parts.length - 1] || '';
+    // Only render if it looks like our 8-char alphabet
+    const ALPHA = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{8}$/;
+    let code = '';
+    if (ALPHA.test(rawCode.toUpperCase())) {
+      code = rawCode.toUpperCase();
+      const formatted = code.slice(0, 4) + ' – ' + code.slice(4);
+      document.getElementById('code').textContent = formatted;
+    } else {
+      // No valid code in URL — hide the code block entirely
+      document.querySelector('.code-wrap').style.display = 'none';
+    }
+
+    // Auto-copy to clipboard on load (silent best-effort)
+    if (code && navigator.clipboard) {
+      navigator.clipboard.writeText(code).catch(() => {});
+    }
+
+    function doCopy() {
+      if (!code) return;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const lbl = document.getElementById('copyLabel');
+        btn.classList.add('copied');
+        lbl.textContent = 'コピー済み ✓';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          lbl.textContent = 'コピー';
+        }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
