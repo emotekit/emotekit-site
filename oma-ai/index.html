@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oma.ai - 誰でも AI 化 | EmoteKit</title>
+  <link rel="icon" type="image/png" href="../images/oma-ai-icon.png">
+  <link rel="apple-touch-icon" href="../images/oma-ai-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      background: #ffffff; color: #3c4043;
+      line-height: 1.6; font-size: 16px; overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* 会社ナビ (EmoteKit, white) */
+    .company-nav {
+      background: #ffffff; position: fixed;
+      top: 0; left: 0; right: 0; z-index: 101;
+    }
+    .company-nav-content {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px; max-width: 1200px; margin: 0 auto;
+    }
+    .company-logo-section { display: flex; align-items: center; gap: 4px; text-decoration: none; }
+    .logo {
+      width: 32px; height: 32px; background: transparent; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: contain; }
+    .brand-name {
+      font-size: 24px; font-weight: 800; color: #ff220a;
+      text-decoration: none; letter-spacing: -0.5px;
+    }
+
+    /* 製品ナビ (Oma.ai, black with red accent) */
+    .product-nav {
+      background: #0a0a0e; position: fixed;
+      top: 56px; left: 0; right: 0; z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+    .product-nav-content {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px; max-width: 1200px; margin: 0 auto;
+    }
+    .product-logo-section { display: flex; align-items: center; gap: 10px; }
+    .product-logo-icon { width: 36px; height: 36px; }
+    .product-logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .product-name {
+      font-size: 32px; font-weight: 800; color: white;
+      letter-spacing: -0.5px; line-height: 1;
+    }
+    .product-tagline {
+      font-size: 13px; color: rgba(255, 255, 255, 0.7);
+      font-weight: 500; letter-spacing: 0.3px;
+    }
+    .product-nav-links { display: flex; align-items: center; gap: 24px; }
+    .product-nav-link {
+      color: white; text-decoration: none; font-weight: 600; font-size: 16px;
+      transition: all 0.2s ease; opacity: 0.85;
+    }
+    .product-nav-link:hover { opacity: 1; }
+    .product-nav-cta {
+      background: #ff3369; color: white;
+      padding: 10px 20px; border-radius: 24px; text-decoration: none;
+      font-weight: 700; font-size: 15px; transition: all 0.2s ease; border: none;
+      box-shadow: 0 4px 12px rgba(255, 51, 105, 0.35);
+    }
+    .product-nav-cta:hover { transform: translateY(-2px); }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(180deg, #0a0a0e 0%, #2a0a18 100%);
+      color: white; padding: 160px 0 100px; margin-top: 100px;
+    }
+    .hero-content {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-text { max-width: 560px; }
+    .hero h1 {
+      font-size: 64px; font-weight: 900;
+      color: white; margin-bottom: 16px;
+      line-height: 1.05; letter-spacing: -1.5px;
+    }
+    .hero-highlight { color: #ff3369; }
+    .hero p {
+      font-size: 18px; color: rgba(255,255,255,0.85);
+      margin-bottom: 40px; line-height: 1.6; font-weight: 500;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #ff3369; color: white;
+      padding: 16px 32px; text-decoration: none; border-radius: 28px;
+      font-weight: 700; font-size: 16px; transition: all 0.2s ease;
+      box-shadow: 0 6px 18px rgba(255, 51, 105, 0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255, 51, 105, 0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4);
+      padding: 14px 30px; text-decoration: none; border-radius: 28px;
+      font-weight: 700; font-size: 16px; transition: all 0.2s ease;
+    }
+    .btn-secondary:hover { border-color: white; }
+    .hero-image {
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+    }
+    .hero-image img { max-width: 320px; width: 100%; height: auto; filter: drop-shadow(0 24px 60px rgba(255, 51, 105, 0.4)); }
+
+    /* 機能 */
+    section { padding: 80px 0; }
+    .features-section { background: white; }
+    .features-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center; margin-bottom: 80px;
+    }
+    .features-grid:last-child { margin-bottom: 0; }
+    .features-grid.reverse { direction: rtl; }
+    .features-grid.reverse > * { direction: ltr; }
+    .feature-content h2 {
+      font-size: 40px; font-weight: 800; color: #202124;
+      margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.5px;
+    }
+    .feature-content p {
+      font-size: 18px; color: #5f6368;
+      line-height: 1.6; margin-bottom: 16px; font-weight: 400;
+    }
+    .feature-content .step {
+      display: inline-block; font-size: 13px; font-weight: 800;
+      letter-spacing: 1px; color: #ff3369; margin-bottom: 8px;
+    }
+    .feature-image {
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px; background: #f8f9fa; border-radius: 24px;
+      min-height: 320px;
+    }
+    .feature-image .placeholder {
+      font-size: 80px; color: rgba(255, 51, 105, 0.25); font-weight: 900; letter-spacing: -3px;
+    }
+
+    /* funiki 説明 (dark band) */
+    .funiki-section { background: #0a0a0e; color: white; padding: 80px 0; }
+    .funiki-content { text-align: center; max-width: 800px; margin: 0 auto; }
+    .funiki-content h2 {
+      font-size: 44px; font-weight: 800; margin-bottom: 20px;
+      line-height: 1.2; letter-spacing: -1px;
+    }
+    .funiki-content p {
+      font-size: 18px; color: rgba(255,255,255,0.8);
+      margin-bottom: 16px; line-height: 1.7;
+    }
+    .funiki-section .pill {
+      display: inline-block; background: #ff3369; color: white;
+      padding: 6px 16px; border-radius: 20px;
+      font-weight: 800; font-size: 14px; letter-spacing: 0.5px;
+      margin: 24px 0;
+    }
+
+    /* CTA */
+    .cta-section { background: #f8f9fa; text-align: center; padding: 100px 0; }
+    .cta-section h2 {
+      font-size: 48px; font-weight: 800; color: #202124;
+      margin-bottom: 24px; line-height: 1.2; letter-spacing: -0.5px;
+    }
+    .cta-section p { font-size: 18px; color: #5f6368; margin-bottom: 40px; font-weight: 400; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* フッター (dark) */
+    footer { background: #0a0a0e; color: white; padding: 60px 0 40px; }
+    .footer-content {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px; margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 24px; font-weight: 800; color: white; margin-bottom: 16px;
+    }
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6; font-size: 15px; font-weight: 400;
+    }
+    .footer-column h4 {
+      font-size: 16px; font-weight: 700; margin-bottom: 20px;
+      color: white; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7); text-decoration: none;
+      font-size: 15px; transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: #ff3369; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 32px; text-align: center;
+      color: rgba(255, 255, 255, 0.5); font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-text { max-width: 100%; }
+      .hero-buttons { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; gap: 40px; }
+      .features-grid.reverse { direction: ltr; }
+      .footer-content { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .company-nav-content, .product-nav-content { padding: 12px 16px; }
+      .product-nav-links { display: none; }
+      .product-name { font-size: 26px; }
+      .hero { padding: 140px 0 60px; }
+      .hero h1 { font-size: 40px; }
+      .hero p { font-size: 16px; }
+      .feature-content h2 { font-size: 28px; }
+      .funiki-content h2 { font-size: 32px; }
+      .cta-section h2 { font-size: 30px; }
+      .footer-content { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 会社ナビ -->
+<nav class="company-nav">
+  <div class="company-nav-content">
+    <a href="../index.html" class="company-logo-section">
+      <div class="logo"><img src="../images/1.png" alt="EmoteKit Logo"></div>
+      <span class="brand-name">EmoteKit</span>
+    </a>
+  </div>
+</nav>
+
+<!-- 製品ナビ -->
+<nav class="product-nav">
+  <div class="product-nav-content">
+    <div class="product-logo-section">
+      <div class="product-logo-icon"><img src="../images/oma-ai-icon.png" alt="Oma.ai"></div>
+      <div>
+        <div class="product-name">Oma.ai</div>
+        <div class="product-tagline">誰でも AI 化</div>
+      </div>
+    </div>
+    <div class="product-nav-links">
+      <a href="#about" class="product-nav-link">特徴</a>
+      <a href="#funiki" class="product-nav-link">funiki とは</a>
+      <a href="https://apps.apple.com/jp/app/id6772423606" class="product-nav-cta" target="_blank" rel="noopener noreferrer">アプリを入手</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          誰でも、<br>
+          <span class="hero-highlight">AI に。</span>
+        </h1>
+        <p>
+          スクショ 5 枚で、あの人の "雰囲気" を 1 つのファイルに。<br>
+          ChatGPT / Claude / Gemini にそのまま渡せば、その人らしい返事が返ってくる。
+        </p>
+        <div class="hero-buttons">
+          <a href="https://apps.apple.com/jp/app/id6772423606" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-apple"></i> App Store で入手
+          </a>
+          <a href="#funiki" class="btn-secondary">funiki とは？</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="../images/oma-ai-icon.png" alt="Oma.ai ロゴ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="features-section">
+  <div class="container">
+
+    <div class="features-grid">
+      <div class="feature-content">
+        <span class="step">STEP 01</span>
+        <h2>スクショを 5 枚選ぶ</h2>
+        <p>チャットのスクリーンショットを写真ライブラリから 5 枚まで選ぶだけ。</p>
+        <p>OCR から雰囲気推定まで、すべて端末内で完結。クラウドへの送信は一切ありません。</p>
+      </div>
+      <div class="feature-image"><div class="placeholder">01</div></div>
+    </div>
+
+    <div class="features-grid reverse">
+      <div class="feature-content">
+        <span class="step">STEP 02</span>
+        <h2>funiki ファイル誕生</h2>
+        <p>口調・距離感・絵文字の使い方・話のテンポなどの会話パラメータが、1 つの .funiki.json ファイルとして書き出されます。</p>
+        <p>実名や顔・連絡先は入りません。あくまで「対話設定」だけのファイルです。</p>
+      </div>
+      <div class="feature-image"><div class="placeholder">02</div></div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-content">
+        <span class="step">STEP 03</span>
+        <h2>AI に渡すだけ</h2>
+        <p>ChatGPT / Claude / Gemini を開いて、.funiki.json を添付。あとはいつも通り話しかけるだけ。</p>
+        <p>1 通目から、その人らしい雰囲気で返してきます。</p>
+      </div>
+      <div class="feature-image"><div class="placeholder">03</div></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="funiki" class="funiki-section">
+  <div class="container">
+    <div class="funiki-content">
+      <span class="pill">funiki とは</span>
+      <h2>雰囲気を、1 つのファイルに</h2>
+      <p>
+        funiki は、対話傾向・口調・応答制約その他の会話パラメータを記録した設定ファイルです。
+      </p>
+      <p>
+        実在人物そのものの再現や人格の代替を意図したものではなく、本人性を保証する手段でもありません。短期対話用の AI 設定としてだけ機能します。
+      </p>
+      <p>
+        funiki は MIT ライセンスのオープン仕様 (<a href="https://github.com/funikidev/funiki" style="color:#ff3369;">funikidev/funiki</a>) として公開されており、Oma.ai はその準拠クライアントです。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>その人らしさを、AI に。</h2>
+    <p>今すぐダウンロード。完全ローカル処理・アカウント不要。</p>
+    <div class="cta-buttons">
+      <a href="https://apps.apple.com/jp/app/id6772423606" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-apple"></i> App Store で入手
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Oma.ai</h3>
+        <p>誰でも AI 化。その人の funiki を、一つのファイルに。完全ローカル処理。</p>
+      </div>
+      <div class="footer-column">
+        <h4>製品</h4>
+        <ul class="footer-links">
+          <li><a href="#about">特徴</a></li>
+          <li><a href="#funiki">funiki とは</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>会社情報</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">EmoteKit</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>サポート</h4>
+        <ul class="footer-links">
+          <li><a href="terms.html" target="_blank" rel="noopener noreferrer">利用規約</a></li>
+          <li><a href="privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+          <li><a href="legal.html" target="_blank" rel="noopener noreferrer">特定商取引法に基づく表記</a></li>
+          <li><a href="mailto:contact@emotekit.com">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 EmoteKit. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
