@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["L5HJT2PM57.ai.oma.app"],
+        "components": [
+          {
+            "/": "/oma-ai/i/*",
+            "comment": "Oma.ai invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
