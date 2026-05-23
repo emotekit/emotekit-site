@@ -88,24 +88,41 @@
   </div>
 
   <script>
-    // Extract code from path (/oma-ai/i/<CODE>) — last segment.
-    const parts = location.pathname.split('/').filter(Boolean);
-    const rawCode = parts[parts.length - 1] || '';
-    // Only render if it looks like our 8-char alphabet
+    // Invite payload format (matches Swift InviteToken canonical JSON):
+    //   ?d=<base64url(JSON {code: "ABCDEFGH", exp: 12345})>&s=<base64url(sig)>
+    // We only decode 'd' to read the code for display — signature checking
+    // happens inside the app, not here.
+    const params = new URLSearchParams(location.search);
     const ALPHA = /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{8}$/;
     let code = '';
-    if (ALPHA.test(rawCode.toUpperCase())) {
-      code = rawCode.toUpperCase();
-      const formatted = code.slice(0, 4) + ' – ' + code.slice(4);
-      document.getElementById('code').textContent = formatted;
-    } else {
-      // No valid code in URL — hide the code block entirely
-      document.querySelector('.code-wrap').style.display = 'none';
+
+    function b64urlDecode(s) {
+      s = s.replace(/-/g, '+').replace(/_/g, '/');
+      while (s.length % 4) s += '=';
+      try { return atob(s); } catch (e) { return ''; }
     }
 
-    // Auto-copy to clipboard on load (silent best-effort)
-    if (code && navigator.clipboard) {
-      navigator.clipboard.writeText(code).catch(() => {});
+    const d = params.get('d');
+    if (d) {
+      try {
+        const payload = JSON.parse(b64urlDecode(d));
+        if (payload && typeof payload.code === 'string'
+            && ALPHA.test(payload.code.toUpperCase())) {
+          code = payload.code.toUpperCase();
+        }
+      } catch (e) {}
+    }
+
+    if (code) {
+      const formatted = code.slice(0, 4) + ' – ' + code.slice(4);
+      document.getElementById('code').textContent = formatted;
+      // Auto-copy on load (silent best-effort; iOS Safari may decline
+      // without a user gesture — that's fine, the button is the backup).
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).catch(() => {});
+      }
+    } else {
+      document.querySelector('.code-wrap').style.display = 'none';
     }
 
     function doCopy() {
