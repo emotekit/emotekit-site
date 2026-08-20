@@ -676,8 +676,19 @@
         grid-template-columns: 1fr;
       }
       
-      .language-selector {
+      .nav-links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .nav-links .nav-link {
         display: none;
+      }
+
+      .language-selector {
+        display: flex;
+        padding: 6px 10px;
+        font-size: 12px;
       }
     }
     
@@ -720,10 +731,10 @@
         <a href="#features" class="nav-link">特徴</a>
         <a href="#company" class="nav-link">会社情報</a>
         <a href="#contact" class="nav-link">お問い合わせ</a>
-        <span class="language-selector">
+        <a href="en/" class="language-selector" lang="en" hreflang="en" aria-label="View this site in English">
           <i class="fas fa-globe"></i>
-          日本語
-        </span>
+          English
+        </a>
       </div>
     </div>
   </div>
