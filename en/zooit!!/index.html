@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZooIt!! — Animal Workout Park | EmoteKit</title>
+  <link rel="icon" type="image/png" href="../../images/1.png">
+  <link rel="apple-touch-icon" href="../../images/1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #3c4043;
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 会社ナビゲーション */
+    .company-nav {
+      background: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 101;
+    }
+
+    .company-nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .company-logo-section {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ff220a;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    /* 製品ナビゲーション（オレンジ背景） */
+    .product-nav {
+      background: #ec672c;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-logo-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .product-name {
+      font-size: 32px;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .product-tagline {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .product-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .product-nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      opacity: 0.9;
+    }
+
+    .product-nav-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .product-nav-cta {
+      background: white;
+      color: #ec672c;
+      padding: 10px 20px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      background: #f8f9fa;
+      padding: 140px 0 80px;
+      margin-top: 112px;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text {
+      max-width: 560px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 900;
+      color: #202124;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .hero-highlight {
+      color: #ec672c;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #5f6368;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ec672c;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      border: none;
+      box-shadow: 0 4px 12px rgba(236, 103, 44, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #d45a23;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236, 103, 44, 0.4);
+    }
+
+    .hero-image {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    /* セクション共通 */
+    section {
+      padding: 80px 0;
+    }
+
+    /* 機能セクション */
+    .features-section {
+      background: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .features-grid:last-child {
+      margin-bottom: 0;
+    }
+
+    .features-grid.reverse {
+      direction: rtl;
+    }
+
+    .features-grid.reverse > * {
+      direction: ltr;
+    }
+
+    .feature-content h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #202124;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .feature-content p {
+      font-size: 18px;
+      color: #5f6368;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .feature-image {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .feature-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 脱走セクション */
+    .escape-section {
+      background: #ec672c;
+      color: white;
+      padding: 80px 0;
+    }
+
+    .escape-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .escape-text h2 {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .escape-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      opacity: 0.95;
+    }
+
+    .escape-image {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .escape-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* どうぶつカルーセル */
+    .animals-section {
+      text-align: center;
+      padding: 80px 0;
+      background: white;
+      overflow: hidden;
+    }
+
+    .animals-section h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #202124;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .animals-section .section-description {
+      font-size: 18px;
+      color: #5f6368;
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    .animals-carousel {
+      position: relative;
+      overflow: hidden;
+      padding: 40px 0;
+      width: 100%;
+    }
+
+    .animals-track {
+      display: flex;
+      gap: 24px;
+      animation: scroll 40s linear infinite;
+      width: fit-content;
+    }
+
+    .animals-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animal-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      min-width: 240px;
+      width: 240px;
+      flex-shrink: 0;
+      border: 1px solid #e8eaed;
+    }
+
+    .animal-card:hover {
+      transform: translateY(-8px);
+      border-color: #ec672c;
+    }
+
+    .animal-image {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .animal-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .animal-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .animal-info h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #202124;
+      margin-bottom: 4px;
+    }
+
+    .animal-info p {
+      color: #5f6368;
+      font-size: 14px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* CTA セクション */
+    .cta-section {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #202124;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: #5f6368;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* フッター */
+    footer {
+      background: #ec672c;
+      color: white;
+      padding: 60px 0 40px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s ease;
+      font-weight: 400;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 32px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: white;
+      color: #ec672c;
+      transform: scale(1.1);
+    }
+
+    /* タブレット対応 */
+    @media (max-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-text {
+        text-align: center;
+        max-width: 100%;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid.reverse {
+        direction: ltr;
+      }
+
+      .escape-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+
+    /* モバイル対応 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .company-nav-content {
+        padding: 12px 16px;
+      }
+
+      .product-nav-content {
+        padding: 12px 16px;
+      }
+
+      .product-nav-links {
+        display: none;
+      }
+
+      .brand-name {
+        font-size: 20px;
+      }
+
+      .logo {
+        width: 28px;
+        height: 28px;
+      }
+
+      .product-name {
+        font-size: 28px;
+      }
+
+      .product-tagline {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 120px 0 60px;
+        margin-top: 112px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-image {
+        padding: 20px;
+      }
+
+      .feature-content h2 {
+        font-size: 32px;
+      }
+
+      .feature-content p {
+        font-size: 16px;
+      }
+
+      .feature-image {
+        padding: 20px;
+      }
+
+      .escape-text h2 {
+        font-size: 32px;
+      }
+
+      .escape-text p {
+        font-size: 16px;
+      }
+
+      .escape-image {
+        padding: 20px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .animals-section h2 {
+        font-size: 32px;
+      }
+
+      .animals-section .section-description {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      .animals-carousel {
+        padding: 20px 0;
+      }
+
+      .animal-card {
+        min-width: 200px;
+        width: 200px;
+      }
+
+      .animal-image {
+        height: 200px;
+        padding: 15px;
+      }
+
+      .animal-info {
+        padding: 16px;
+      }
+
+      .animal-info h3 {
+        font-size: 16px;
+      }
+
+      .animal-info p {
+        font-size: 13px;
+      }
+
+      .cta-section h2 {
+        font-size: 32px;
+      }
+
+      .cta-section p {
+        font-size: 16px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        max-width: 100%;
+      }
+    }
+
+    /* 小型モバイル対応 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 15px;
+        margin-bottom: 32px;
+      }
+
+      .feature-content h2 {
+        font-size: 28px;
+      }
+
+      .feature-content p {
+        font-size: 15px;
+      }
+
+      .escape-text h2 {
+        font-size: 28px;
+      }
+
+      .escape-text p {
+        font-size: 15px;
+      }
+
+      .animals-section h2 {
+        font-size: 28px;
+      }
+
+      .animal-card {
+        min-width: 180px;
+        width: 180px;
+      }
+
+      .animal-image {
+        height: 180px;
+        padding: 12px;
+      }
+
+      .cta-section h2 {
+        font-size: 28px;
+      }
+
+      .product-name {
+        font-size: 24px;
+      }
+
+      .product-tagline {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 会社ナビゲーション（白背景） -->
+<nav class="company-nav">
+  <div class="company-nav-content">
+    <a href="../index.html" class="company-logo-section">
+      <div class="logo">
+      <img src="../../images/1.png" alt="EmoteKit Logo">
+      </div>
+      <span class="brand-name">EmoteKit</span>
+    </a>
+  </div>
+</nav>
+
+<!-- 製品ナビゲーション（オレンジ背景） -->
+<nav class="product-nav">
+  <div class="product-nav-content">
+    <div class="product-logo-section">
+      <div class="product-name">ZooIt!!</div>
+      <div class="product-tagline">Animal Workout Park</div>
+    </div>
+    <div class="product-nav-links">
+      <a href="#features" class="product-nav-link">Features</a>
+      <a href="#animals" class="product-nav-link">Animals</a>
+      <a href="../../zooit!!/" class="product-nav-link" lang="ja" hreflang="ja" aria-label="日本語版を表示">日本語</a>
+      <a href="https://apps.apple.com/jp/app/zooit-%E3%81%8D%E3%82%93%E3%83%88%E3%83%AC%E5%8B%95%E7%89%A9%E5%9C%92/id6747784040" class="product-nav-cta" target="_blank" rel="noopener noreferrer">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Work out with<br>
+          <span class="hero-highlight">muscular animals</span>
+        </h1>
+        <p>
+          Skip your workouts and they might escape! Train together, grow together, and build a lasting routine with this beginner-friendly fitness app.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://apps.apple.com/jp/app/zooit-%E3%81%8D%E3%82%93%E3%83%88%E3%83%AC%E5%8B%95%E7%89%A9%E5%9C%92/id6747784040" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-apple"></i>
+            Download on the App Store
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="../../images/z1.png" alt="ZooIt!! — Animal Workout Park" onerror="this.src='../../images/1.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features-section">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-content">
+        <h2>10-minute workouts</h2>
+        <p>
+          Choose three easy beginner exercises—push-ups, sit-ups, squats, planks, and more—and start your workout. Training alongside your favorite animal makes even tough sessions feel easier.
+        </p>
+        <p>
+          As your animals grow, they learn new poses and personal mottos. They will be there to keep you motivated!
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="../../images/z2.png" alt="Working out with an animal" onerror="this.src='../../images/1.png'">
+      </div>
+    </div>
+
+    <div class="features-grid reverse">
+      <div class="feature-content">
+        <h2>Scout new animals</h2>
+        <p>
+          Work out three times to get a scouting chance. You might even meet a rare muscular animal...
+        </p>
+        <p>
+          These animals are quiet and disciplined, but they have plenty to say through their actions. Talk to them often for helpful advice and unexpected surprises.
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="../../images/z3.png" alt="Scouting for a new animal" onerror="this.src='../../images/1.png'">
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-content">
+        <h2>Build your own<br>animal park</h2>
+        <p>
+          Choose a pose, background, and motto (or catchphrase) to create an exhibit of your own. You might even win a place in the weekly contest!
+        </p>
+        <p>
+          With the friend feature, you can share your daily exhibits, cheer each other on, and celebrate your progress together.
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="../../images/z4.png" alt="Creating an animal exhibit" onerror="this.src='../../images/1.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="escape-section">
+  <div class="container">
+    <div class="escape-content">
+      <div class="escape-text">
+        <h2>They might escape...?</h2>
+        <p>
+          Your animals' motivation (MP) drops by one every day. If it reaches zero, they may run away from the park...!
+        </p>
+        <p>
+          Work out every day to keep their motivation high. On days when you cannot train, give them protein to keep them going!
+        </p>
+      </div>
+      <div class="escape-image">
+        <img src="../../images/z5.png" alt="Watch out for escaping animals" onerror="this.src='../../images/1.png'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="animals" class="animals-section">
+  <div class="container">
+    <h2>Meet the muscular animals</h2>
+    <p class="section-description">A cast of unique companions is waiting for you!</p>
+  </div>
+
+  <div class="animals-carousel">
+    <div class="animals-track">
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z6.png" alt="Bear">
+        </div>
+        <div class="animal-info">
+          <h3>Bear</h3>
+        </div>
+      </div>
+
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z7.png" alt="Rabbit">
+        </div>
+        <div class="animal-info">
+          <h3>Rabbit</h3>
+        </div>
+      </div>
+
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z8.png" alt="Horse">
+        </div>
+        <div class="animal-info">
+          <h3>Horse</h3>
+        </div>
+      </div>
+
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z9.png" alt="Koala">
+        </div>
+        <div class="animal-info">
+          <h3>Koala</h3>
+        </div>
+      </div>
+
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z10.png" alt="Frog">
+        </div>
+        <div class="animal-info">
+          <h3>Frog</h3>
+        </div>
+      </div>
+
+      <div class="animal-card">
+        <div class="animal-image">
+          <img src="../../images/z11.png" alt="Seal">
+        </div>
+        <div class="animal-info">
+          <h3>Seal</h3>
+        </div>
+      </div>
+
+      <!-- 複製してループ効果を作成 -->
+<div class="animal-card">
+<div class="animal-image">
+<img src="../../images/z6.png" alt="Bear">
+</div>
+<div class="animal-info">
+<h3>Bear</h3>
+</div>
+</div>
+  <div class="animal-card">
+    <div class="animal-image">
+      <img src="../../images/z7.png" alt="Rabbit">
+    </div>
+    <div class="animal-info">
+      <h3>Rabbit</h3>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <div class="animal-image">
+    <img src="../../images/z8.png" alt="Horse">
+    </div>
+    <div class="animal-info">
+      <h3>Horse</h3>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <div class="animal-image">
+    <img src="../../images/z9.png" alt="Koala">
+    </div>
+    <div class="animal-info">
+      <h3>Koala</h3>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <div class="animal-image">
+    <img src="../../images/z10.png" alt="Frog">
+    </div>
+    <div class="animal-info">
+      <h3>Frog</h3>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <div class="animal-image">
+    <img src="../../images/z11.png" alt="Seal">
+    </div>
+    <div class="animal-info">
+      <h3>Seal</h3>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container">
+    <h2>Start ZooIt!! today</h2>
+    <p>Free to download now!</p>
+    <div class="cta-buttons">
+      <a href="https://apps.apple.com/jp/app/zooit-%E3%81%8D%E3%82%93%E3%83%88%E3%83%AC%E5%8B%95%E7%89%A9%E5%9C%92/id6747784040" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-apple"></i>
+        Download on the App Store
+      </a>
+    </div>
+  </div>
+</section>
+<section class="line-stamp-section" style="background:#06C755; color:white; padding:60px 0; text-align:center;">
+  <div class="container">
+    <h2 style="font-size:36px; font-weight:800; color:white; margin-bottom:8px; letter-spacing:-0.5px;">Official LINE stickers now available!</h2>
+    <p style="font-size:16px; opacity:0.9; margin-bottom:40px; font-weight:500;">The ZooIt!! crew is now available as LINE stickers.</p>
+    <div class="stamp-gallery" style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:40px;">
+      <img src="../../images/stamp1.png" alt="LINE sticker 1" style="width:120px; height:120px; object-fit:contain; border-radius:12px; background:white; padding:4px;">
+      <img src="../../images/stamp2.png" alt="LINE sticker 2" style="width:120px; height:120px; object-fit:contain; border-radius:12px; background:white; padding:4px;">
+      <img src="../../images/stamp3.png" alt="LINE sticker 3" style="width:120px; height:120px; object-fit:contain; border-radius:12px; background:white; padding:4px;">
+      <img src="../../images/stamp4.png" alt="LINE sticker 4" style="width:120px; height:120px; object-fit:contain; border-radius:12px; background:white; padding:4px;">
+    </div>
+    <a href="https://store.line.me/stickershop/product/32611971/ja?utm_source=gnsh_stickerDetail" class="btn-primary" target="_blank" rel="noopener noreferrer" style="background:white; color:#06C755; box-shadow:0 4px 12px rgba(0,0,0,0.2); display:inline-flex; align-items:center; gap:10px; padding:16px 32px; text-decoration:none; border-radius:24px; font-weight:700; font-size:16px;">
+      <i class="fab fa-line"></i>
+      Download stickers
+    </a>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ZooIt!!</h3>
+        <p>Workouts with muscular animals—a fresh fitness experience that keeps you coming back.</p>
+        <div class="social-links">
+          <a href="https://x.com/ZooIt_Official" class="social-link" target="_blank" rel="noopener noreferrer" style="text-decoration:none; font-weight:700; font-size:16px;">X</a>
+        </div>
+      </div>
+  <div class="footer-column">
+    <h4>Product</h4>
+    <ul class="footer-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#animals">Animals</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h4>Company</h4>
+    <ul class="footer-links">
+      <li><a href="../index.html">EmoteKit</a></li>
+      <li><a href="#">Press releases</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-column">
+    <h4>Support</h4>
+    <ul class="footer-links">
+      <li><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
+      <li><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+      <li><a href="legal.html" target="_blank" rel="noopener noreferrer">Commercial Disclosure</a></li>
+      <li><a href="mailto:contact@emotekit.com">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 EmoteKit. All rights reserved.</p>
+</div>
+  </div>
+</footer>
+<script>
+// スムーススクロール
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+
+</script>
+</body>
+</html>
