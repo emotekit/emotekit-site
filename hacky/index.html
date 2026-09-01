@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <meta name="description" content="Hackyは、写真やテキストから数ターンだけAIを変身させるファイルをつくるiPhoneアプリです。">
-  <title>Hacky | AIを、ちょっとだけ変身。</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Hackyは、ひとつ貼り付けるだけでAIを友だちや家族、あの人に数ターンだけ変身させるiPhoneアプリです。">
+  <title>Hacky | AI用の変身薬。</title>
   <link rel="icon" type="image/png" href="../images/hacky-icon.png">
-  <link rel="stylesheet" href="site.css?v=20260902-2">
+  <link rel="stylesheet" href="site.css?v=20260902-3">
 </head>
 <body>
   <div class="shell">
@@ -16,59 +16,65 @@
         <img src="../images/hacky-icon.png" alt="">
         <span>HACKY</span>
       </a>
-      <a class="header-link" href="#how">3ステップを見る ↓</a>
+      <a class="header-link" href="#how">しくみを見る ↓</a>
     </header>
 
     <main>
-      <div class="hero">
+      <section class="hero" aria-labelledby="hero-title">
+        <figure class="hero-mascot">
+          <img src="../images/hacky-icon.png" alt="黄色いHackyマスコット">
+        </figure>
         <div class="hero-copy">
-          <p class="eyebrow">Make it. Drop it. Back again.</p>
-          <h1><span class="hero-white">AIを、</span><span>ちょっとだけ</span><span>変身。</span></h1>
-          <p class="lead">写真やテキストからHackyを作って、AIチャットにポン。決めた回数だけ会話が変わって、終わればいつものAIに戻ります。</p>
+          <p class="eyebrow">One file. A little magic.</p>
+          <h1 id="hero-title"><span>AI用の</span><span class="hero-yellow">変身薬。</span></h1>
+          <p class="lead">HackyをひとつAIチャットに貼り付けると、AIが友だちや家族、「あの人」に数ターンだけ変身します。</p>
+          <p class="hero-end">効果が切れたら、いつものAIに戻ります。</p>
           <div class="actions">
-            <a class="button button-primary" href="#how">3ステップを見る</a>
+            <a class="button button-primary" href="#how">使い方を見る</a>
             <a class="button button-secondary" href="#release">Hacky Proを見る</a>
           </div>
           <p class="note">iOS 17.0以降 / iPhone向け / 13歳以上 / 招待制</p>
         </div>
-        <figure class="hero-mark">
-          <img src="../images/hacky-icon.png" alt="Hackyアプリアイコン">
-          <figcaption>つくる <span>→</span> 投げる <span>→</span> 戻る</figcaption>
-        </figure>
-      </div>
+      </section>
 
       <section id="how" aria-labelledby="how-title">
         <p class="section-kicker">How it works</p>
-        <h2 id="how-title">3ステップで、<br>会話が変わる。</h2>
-        <p class="section-intro">作成はiPhoneの中。ファイルが外へ出るのは、あなたが共有先を選んだときだけです。</p>
-        <div class="features">
-          <article class="feature-card">
-            <span class="feature-number">01 / CHOOSE</span>
-            <h3>選ぶ</h3>
-            <p>写真やテキストを選ぶ。実在人物の素材は、本人か権利者の許可を確認します。</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-number">02 / MAKE</span>
+        <div class="section-heading">
+          <h2 id="how-title">ひとつ貼り付ける。<br>会話が変わる。</h2>
+          <p class="section-intro">写真やテキストから、呼び方や口ぐせ、返事のテンポをひとつのHackyに。使いたいAIチャットに貼り付けると、AIの話し方とリアクションが変わります。</p>
+        </div>
+        <ol class="journey">
+          <li>
+            <span class="journey-number">01</span>
             <h3>作る</h3>
-            <p>iPhoneの中でHackyに。できあがりを見て、必要なら「もっと似せる」。</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-number">03 / DROP</span>
-            <h3>投げる</h3>
-            <p>AIチャットへ自分で添付。数ターン遊んだら、自動で終了します。</p>
-          </article>
+            <p>写真やテキストを選び、iPhoneの中でHackyを作ります。</p>
+          </li>
+          <li>
+            <span class="journey-number">02</span>
+            <h3>貼り付ける</h3>
+            <p>使いたいAIチャットに、できあがったHackyをひとつ貼り付けます。</p>
+          </li>
+          <li>
+            <span class="journey-number">03</span>
+            <h3>変身して、戻る</h3>
+            <p>決めた回数だけ会話が変わり、最後の返事で効果が終わります。</p>
+          </li>
+        </ol>
+        <div class="effect-line">
+          <span>AIの何が変わる？</span>
+          <p>言葉づかい、呼び方、返事のテンポ、リアクション。会話の雰囲気だけを、短いあいだ変えます。</p>
         </div>
       </section>
 
       <aside class="play-note" aria-label="Hackyを楽しむための大切なこと">
-        <p>本人ではなく、AIの演出。<br>許可のある素材で遊んでね。</p>
+        <p>本人ではなくAIの演出。許可のある素材で遊んでね。</p>
         <a href="terms.html">大切なルール →</a>
       </aside>
 
       <section class="release-panel" id="release" aria-labelledby="release-title">
         <p class="section-kicker">Hacky Pro</p>
-        <h2 id="release-title">まずは無料。<br>気に入ったらPro。</h2>
-        <p class="section-intro">Hacky Proは「作る」「もっと似せる」「保存」の制限を解除。サブスクではなく、買い切りです。</p>
+        <h2 id="release-title">まずは無料。<br>もっと遊ぶならPro。</h2>
+        <p class="section-intro">作成、調整、保存が無制限に。サブスクではなく、買い切りです。</p>
         <p class="price">¥3,000 <small>税込・日本のApp Store初回リリース価格</small></p>
         <p class="note">購入条件は<a href="terms.html">利用規約 →</a></p>
       </section>
