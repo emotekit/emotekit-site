@@ -821,6 +821,69 @@
         font-size: 12px;
       }
     }
+    /* お知らせモック：公式Xの告知本文を掲載 */
+    .notice-section {
+      margin-top: 138px;
+      padding: 32px 0 0;
+      background: #f8f9fa;
+    }
+    .notice-card {
+      padding: 24px 28px;
+      border: 1px solid #edc8b7;
+      border-left: 5px solid #ec672c;
+      border-radius: 12px;
+      background: #fffaf6;
+    }
+    .notice-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: #6c625b;
+      font-size: 13px;
+    }
+    .notice-status {
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: #ec672c;
+      color: #fff;
+      font-weight: 800;
+    }
+    .notice-card h2 {
+      margin-bottom: 12px;
+      color: #3c4043;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+    .notice-card p {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .notice-card p + p { margin-top: 12px; }
+    .notice-card .notice-target {
+      margin-bottom: 16px;
+      color: #6c625b;
+      font-size: 14px;
+    }
+    .notice-source {
+      display: inline-block;
+      margin-top: 16px;
+      color: #a43c12;
+      font-size: 14px;
+      font-weight: 800;
+      text-underline-offset: 4px;
+    }
+    .notice-source:focus-visible { outline: 2px solid #a43c12; outline-offset: 5px; }
+    .notice-section + .hero { margin-top: 0; padding-top: 56px; }
+    @media (max-width: 768px) {
+      .notice-section { margin-top: 138px; padding-top: 24px; }
+      .notice-card { padding: 20px; }
+      .notice-card h2 { font-size: 20px; }
+      .notice-card p { font-size: 14px; }
+      .notice-section + .hero { padding-top: 48px; }
+    }
   </style>
 </head>
 <body>
@@ -852,6 +915,25 @@
     </div>
   </div>
 </nav>
+
+<section id="news" class="notice-section" aria-labelledby="notice-title">
+  <div class="container">
+    <article class="notice-card">
+      <div class="notice-meta">
+        <span class="notice-status">対応中</span>
+        <time datetime="2026-09-29">2026.09.29</time>
+        <span>お知らせ</span>
+      </div>
+      <h2 id="notice-title">【不具合のお知らせ】</h2>
+      <p class="notice-target">対象：9月29日配信のZooIt!!（バージョン1.3.1）</p>
+      <div class="notice-original">
+        <p>現在、アップデート後にアプリを起動できない不具合を確認しており、対応中です。<br>修正版の配信まで今しばらくお待ちください。</p>
+        <p>連続記録・MP・脱走等については補填を予定しております。<br>ご迷惑をおかけし、申し訳ございません。</p>
+      </div>
+      <a class="notice-source" href="https://x.com/ZooIt_Official/status/2104908341508210841" target="_blank" rel="noopener noreferrer">公式Xの投稿を見る</a>
+    </article>
+  </div>
+</section>
 
 <section class="hero">
   <div class="container">
