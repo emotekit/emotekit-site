@@ -26,8 +26,9 @@ th, td { border: 1px solid #dfd5c4; padding: .7rem .85rem; vertical-align: top; 
 th { background: #f5f0e4; }
 .legal-table th { width: 28%; min-width: 6.2rem; }
 .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.5rem; align-items: center; padding-top: 1rem; padding-bottom: 2.5rem; }
-.hero h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); letter-spacing: .02em; margin-bottom: 1.2rem; }
+.hero h1 { font-size: clamp(2.05rem, 4.5vw, 2.7rem); letter-spacing: 0; white-space: nowrap; margin-bottom: 1.2rem; }
 .hero p { font-size: 1.05rem; }
+.hero .meta { font-size: .88rem; }
 .hero img { display: block; width: 100%; max-width: 21rem; height: auto; border-radius: 25%; }
 .eyebrow { font-weight: 700; font-size: .9rem !important; }
 .feature-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 0; padding: 0; list-style: none; }
